@@ -47,15 +47,14 @@ gulp.task("css-libs", ['sass'], function () {
 
 gulp.task("scripts-libs", function () {
    return gulp.src([
-      "app/libs/jquery/dist/jquery.min.js",
-       "app/libs/bootstrap/dist/js/bootstrap.js",
-      "app/libs/owl.carousel/dist/owl.carousel.min.js",
-      "app/libs/magnific-popup/dist/jquery.magnific-popup.min.js",
-      "app/libs/jquery-validation/dist/jquery.validate.js",
-       "app/libs/HighlyCustomizable/dist/bootstrap-slider.min.js",
-       "app/libs/slick/slick/slick.js",
-       "app/libs/jQuery.equalHeights/jquery.equalheights.js",
-
+      // "app/libs/jquery/dist/jquery.min.js",
+      //  "app/libs/bootstrap/dist/js/bootstrap.js",
+      // "app/libs/owl.carousel/dist/owl.carousel.min.js",
+      // "app/libs/magnific-popup/dist/jquery.magnific-popup.min.js",
+      // "app/libs/jquery-validation/dist/jquery.validate.js",
+      //  "app/libs/HighlyCustomizable/dist/bootstrap-slider.min.js",
+      //  "app/libs/slick/slick/slick.js",
+      //  "app/libs/jQuery.equalHeights/jquery.equalheights.js",
 
    ])
        .pipe(concat("libs.min.js"))
@@ -130,13 +129,12 @@ gulp.task('sprite', function () {
 gulp.task("pages", function() {
     return gulp.src([
         "app/pages/index/index.pug",
-        "app/pages/indexB/indexB.pug",
-        "app/pages/news/news.pug",
-        "app/pages/tv/tv.pug",
-        "app/pages/tarif/tarif.pug",
-        "app/pages/specials/specials.pug",
-        "app/pages/contacts/contacts.pug",
-        "app/pages/actions/actions.pug",
+        "app/pages/login/login.pug",
+        "app/pages/register/register.pug",
+        "app/pages/groups/groups.pug",
+        "app/pages/list/list.pug",
+        "app/pages/create/create.pug",
+        "app/pages/time_line/time_line.pug",
     ])
         .pipe(pug({pretty: true}))  //с переносом pretty: true
         .on('error', notify.onError(function (error) {

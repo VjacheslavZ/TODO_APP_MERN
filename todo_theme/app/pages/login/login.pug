@@ -1,0 +1,16 @@
+extends ../base
+
+block title
+    | Login
+
+block main
+    .auth
+        form.form__login
+            .input__wrap
+                i.fas.fa-user
+                input.input__default(placeholder='Login')
+            .input__wrap
+                i.fas.fa-lock
+                input.input__default(placeholder='Password')
+
+            button.button__form-action(type='submit') Sign In
