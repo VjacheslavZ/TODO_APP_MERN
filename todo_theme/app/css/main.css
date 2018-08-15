@@ -1,0 +1,436 @@
+@font-face {
+  font-family: "FreestyleScript";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/FreestyleScript/FreestyleScript.ttf) format("truetype");
+  src: url(../fonts/FreestyleScript/FreestyleScript.eot) format("embedded-opentype");
+  src: url(../fonts/FreestyleScript/FreestyleScript.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/FreestyleScript/FreestyleScript.woff) format("woff"); }
+
+@font-face {
+  font-family: "Exo2-Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Exo2-Bold/Exo2-Bold.ttf) format("truetype");
+  src: url(../fonts/Exo2-Bold/Exo2-Bold.eot) format("embedded-opentype");
+  src: url(../fonts/Exo2-Bold/Exo2-Bold.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Exo2-Bold/Exo2-Bold.woff) format("woff"); }
+
+@font-face {
+  font-family: "Exo2-ExtraBold";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Exo2-ExtraBold/Exo2-ExtraBold.ttf) format("truetype");
+  src: url(../fonts/Exo2-ExtraBold/Exo2-ExtraBold.eot) format("embedded-opentype");
+  src: url(../fonts/Exo2-ExtraBold/Exo2-ExtraBold.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Exo2-ExtraBold/Exo2-ExtraBold.woff) format("woff"); }
+
+@font-face {
+  font-family: "Exo2-Light";
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/Exo2-Light/Exo2-Light.ttf) format("truetype");
+  src: url(../fonts/Exo2-Light/Exo2-Light.eot) format("embedded-opentype");
+  src: url(../fonts/Exo2-Light/Exo2-Light.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Exo2-Light/Exo2-Light.woff) format("woff"); }
+
+@font-face {
+  font-family: "Exo2-Medium";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Exo2-Medium/Exo2-Medium.ttf) format("truetype");
+  src: url(../fonts/Exo2-Medium/Exo2-Medium.eot) format("embedded-opentype");
+  src: url(../fonts/Exo2-Medium/Exo2-Medium.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Exo2-Medium/Exo2-Medium.woff) format("woff"); }
+
+@font-face {
+  font-family: "Exo2-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Exo2-Regular/Exo2-Regular.ttf) format("truetype");
+  src: url(../fonts/Exo2-Regular/Exo2-Regular.eot) format("embedded-opentype");
+  src: url(../fonts/Exo2-Regular/Exo2-Regular.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Exo2-Regular/Exo2-Regular.woff) format("woff"); }
+
+@font-face {
+  font-family: "Exo2-SemiBold";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Exo2-SemiBold/Exo2-SemiBold.ttf) format("truetype");
+  src: url(../fonts/Exo2-SemiBold/Exo2-SemiBold.eot) format("embedded-opentype");
+  src: url(../fonts/Exo2-SemiBold/Exo2-SemiBold.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Exo2-SemiBold/Exo2-SemiBold.woff) format("woff"); }
+
+@font-face {
+  font-family: "Exo2-SemiBoldItalic";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Exo2-SemiBoldItalic/Exo2-SemiBoldItalic.ttf) format("truetype");
+  src: url(../fonts/Exo2-SemiBoldItalic/Exo2-SemiBoldItalic.eot) format("embedded-opentype");
+  src: url(../fonts/Exo2-SemiBoldItalic/Exo2-SemiBoldItalic.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Exo2-SemiBoldItalic/Exo2-SemiBoldItalic.woff) format("woff"); }
+
+@font-face {
+  font-family: "Exo2-Italic";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Exo2-Italic/Exo2-Italic.ttf) format("truetype");
+  src: url(../fonts/Exo2-Italic/Exo2-Italic.eot) format("embedded-opentype");
+  src: url(../fonts/Exo2-Italic/Exo2-Italic.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Exo2-Italic/Exo2-Italic.woff) format("woff"); }
+
+@font-face {
+  font-family: "Lato-Medium";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato-Medium/Lato-Medium.ttf) format("truetype");
+  src: url(../fonts/Lato-Medium/Lato-Medium.eot) format("embedded-opentype");
+  src: url(../fonts/Lato-Medium/Lato-Medium.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Lato-Medium/Lato-Medium.woff) format("woff"); }
+
+@font-face {
+  font-family: "Lato-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato-Regular/Lato-Regular.ttf) format("truetype");
+  src: url(../fonts/Lato-Regular/Lato-Regular.eot) format("embedded-opentype");
+  src: url(../fonts/Lato-Regular/Lato-Regular.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Lato-Regular/Lato-Regular.woff) format("woff"); }
+
+@font-face {
+  font-family: "Lato-Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato-Bold/Lato-Bold.ttf) format("truetype");
+  src: url(../fonts/Lato-Bold/Lato-Bold.eot) format("embedded-opentype");
+  src: url(../fonts/Lato-Bold/Lato-Bold.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Lato-Bold/Lato-Bold.woff) format("woff"); }
+
+@font-face {
+  font-family: "Lato-SemiboldItalic";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato-SemiboldItalic/Lato-SemiboldItalic.ttf) format("truetype");
+  src: url(../fonts/Lato-SemiboldItalic/Lato-SemiboldItalic.eot) format("embedded-opentype");
+  src: url(../fonts/Lato-SemiboldItalic/Lato-SemiboldItalic.eot?#iefix) format("embedded-opentype");
+  src: url(../fonts/Lato-SemiboldItalic/Lato-SemiboldItalic.woff) format("woff"); }
+
+body {
+  font-size: 16px;
+  font-family: "Exo2-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  position: relative;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent; }
+
+p, ul {
+  padding: 0;
+  margin: 0; }
+
+li {
+  list-style: none; }
+
+a {
+  color: #000;
+  -webkit-text-decoration-color: transparent;
+          text-decoration-color: transparent; }
+  a:hover, a:focus {
+    color: #000; }
+  a:visited {
+    outline: none; }
+
+h1 {
+  margin: 0; }
+
+a:focus, a:hover {
+  text-decoration: none;
+  -webkit-text-decoration-color: transparent;
+          text-decoration-color: transparent; }
+
+.cusom__button {
+  display: inline-block;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 45px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 3px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  text-align: center;
+  position: relative;
+  outline: none;
+  -webkit-transition: background-color .1s ease;
+  -o-transition: background-color .1s ease;
+  transition: background-color .1s ease; }
+  .cusom__button::after {
+    -webkit-transition: background-color .2s ease;
+    -o-transition: background-color .2s ease;
+    transition: background-color .2s ease;
+    position: absolute;
+    content: '';
+    height: 4px;
+    bottom: 0;
+    width: 100%;
+    opacity: .18;
+    -webkit-border-bottom-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+    left: 0; }
+  .cusom__button:focus, .cusom__button:hover {
+    text-decoration: none;
+    color: #fff; }
+  .cusom__button:hover::after {
+    opacity: .22; }
+
+.custom__btn-form {
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  display: inline-block;
+  border: none;
+  background-color: #cef201;
+  text-decoration: none;
+  padding: 39px 40px;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  position: relative;
+  outline: none;
+  font-weight: 700;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-box-shadow: 0 2px 17px rgba(7, 78, 31, 0.51), 0 0 88.9px 4.1px rgba(206, 242, 0, 0.55);
+          box-shadow: 0 2px 17px rgba(7, 78, 31, 0.51), 0 0 88.9px 4.1px rgba(206, 242, 0, 0.55); }
+  .custom__btn-form:focus {
+    outline: none; }
+
+input, textarea, select {
+  background-color: #fff;
+  border: 1px solid transparent;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  padding: 8px 22px;
+  outline: none;
+  display: block;
+  font-size: 16px;
+  color: #000; }
+  input:focus:required:invalid, textarea:focus:required:invalid, select:focus:required:invalid {
+    color: #717171; }
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder {
+    color: #717171; }
+  input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+    color: #717171;
+    opacity: 1; }
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder {
+    color: #717171; }
+  input option, textarea option, select option {
+    color: #717171; }
+
+.slider__btn {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 33px;
+  color: #000;
+  background-color: #fff; }
+  .slider__btn:hover {
+    background-color: #cef200; }
+
+.radio {
+  vertical-align: top;
+  width: 17px;
+  height: 17px;
+  margin: 0 3px 0 0; }
+
+.radio + label {
+  cursor: pointer; }
+
+.radio:not(checked) {
+  position: absolute;
+  opacity: 0; }
+
+.radio:not(checked) + label {
+  position: relative;
+  padding: 0 0 0 10px; }
+
+.radio:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: -10px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #525252;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background: transparent; }
+
+.radio:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -7px;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background: #aecb06;
+  -webkit-box-shadow: inset 0 -1px 4px black, 0 0 5px #cef200;
+          box-shadow: inset 0 -1px 4px black, 0 0 5px #cef200;
+  opacity: 0;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s; }
+
+.radio:checked + label:after {
+  opacity: 1; }
+
+input.error + label {
+  color: red; }
+
+#form label.error {
+  display: none !important; }
+
+.form-full input.error {
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  border-color: red; }
+
+.default-section {
+  position: relative;
+  padding: 43px 0 65px 0;
+  height: 550px;
+  -webkit-background-size: cover;
+          background-size: cover; }
+  .default-section .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%; }
+  .default-section__title {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .default-section:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); }
+  .default-section__wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .default-section__info {
+    padding-top: 7px;
+    display: block;
+    width: 220px;
+    font-size: 22px;
+    font-family: "Exo2-SemiBold", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 22px;
+    letter-spacing: 2px; }
+  .default-section__top li {
+    display: inline-block; }
+  .default-section__top li.active a {
+    color: #aecb06;
+    font-family: "Exo2-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    border-bottom: 1px solid #aecb06; }
+    .default-section__top li.active a:hover {
+      border-bottom: 1px solid transparent; }
+  .default-section__top li + li {
+    margin-left: 10px; }
+  .default-section__top a {
+    color: #fff;
+    font-family: "Exo2-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #fff;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+    .default-section__top a:hover {
+      border-bottom: 1px solid transparent; }
+  .default-section__main-content h1 {
+    font-size: 60px;
+    font-family: "Exo2-Bold", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 86px; }
+  .default-section__main-content p {
+    font-family: "Lato-SemiboldItalic", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 20px;
+    color: #fff;
+    line-height: 26px; }
+  .default-section__article {
+    padding: 66px 0; }
+    .default-section__article p {
+      font-family: "Lato-Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 18px;
+      color: #454545;
+      line-height: 24px; }
+      .default-section__article p + p {
+        margin-top: 20px; }
+
+.customBtn {
+  z-index: 999;
+  cursor: pointer; }
+  .customBtn:before {
+    content: "";
+    display: block;
+    background-image: url(../img/sprite.png);
+    background-position: -114px -258px;
+    width: 18px;
+    height: 34px; }
+
+.customNextBtn:before {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg); }
+
+.custom_paddind {
+  padding-left: 0;
+  padding-right: 1px; }
+
+.header {
+  width: 100%; }
+
+.footer {
+  background: #f2f2f2; }

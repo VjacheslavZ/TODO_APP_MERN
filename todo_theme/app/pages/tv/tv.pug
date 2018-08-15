@@ -1,0 +1,474 @@
+extends ../base
+
+block title
+    | кабельное телевидение
+
+block main
+    main#page_tv.page_tv
+        //стандартная секция
+        section.tv.default-section
+            .container
+                .row
+                    .col-sm-3.col-xs-16
+                        .default-section__wrap
+                            .default-section__info
+                                span кабельное телевидение
+
+                    .col-sm-10.default-section__title.col-xs-16
+                        .default-section__top
+                            ul.default-section__type
+                                li.active
+                                    a(href="#") пакеты каналов
+                                li
+                                    a(href="#") подключение
+                        .default-section__main-content
+                            h1 глаз не оторвать!
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+        section.default-section__article
+            .container
+                .row
+                    .col-md-offset-3.col-md-10.col-xs-16
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.m quaera voluptatem.
+
+        //секция список каналов
+        section.tv-list
+            .container
+                .row
+                    .col-md-3.col-sm-3.col-xs-16
+                        span.tv-list__title пакеты каналов
+                    .col-md-4.col-sm-5.col-xs-6
+                        ul.nav.nav-tabs.tv-list__type-toggle
+
+                            li.active
+                                a(href='#1_list_channels_type', data-herf="1_list_channels_type1", data-toggle='tab') кабельное
+                            li
+                                a(href='#2_list_channels_type', data-herf="2_list_channels_type2", data-toggle='tab') ip-tv
+
+                        .tab-content
+                            .tv-list__channels-list
+                                #1_list_channels_type.tab-pane.active
+                                    ul.nav.nav-tabs
+                                        li
+                                            a(href="#list_categoty_public", data-toggle='tab') Общедоступные
+                                        li.active
+                                            a(href="#list_categoty_hd", data-toggle='tab') HD
+                                        li
+                                            a(href="#list_categoty_fun", data-toggle='tab') Развлекательные
+                                        li
+                                            a(href="#list_categoty_learn", data-toggle='tab') Познавательные
+                                        li
+                                            a(href="#list_categoty_sport", data-toggle='tab') Спортивные
+                                        li
+                                            a(href="#list_categoty_children", data-toggle='tab') Детские
+                                        li
+                                            a(href="#list_categoty_film", data-toggle='tab') Фильмовые
+                                        li
+                                            a(href="#list_categoty_news", data-toggle='tab') Новостные
+                                        li
+                                            a(href="#list_categoty_music", data-toggle='tab') Музыкальные
+                                        li
+                                            a(href="#list_categoty_adult", data-toggle='tab') Каналы для взрослых
+
+                                #2_list_channels_type.tab-pane
+                                    ul.nav.nav-tabs
+                                        li
+                                            a(href="#list_ip_categoty_public", data-toggle='tab') Общедоступные
+                                        li.active
+                                            a(href="#list_ip_categoty_hd", data-toggle='tab') HD
+                                        li
+                                            a(href="#list_ip_categoty_fun", data-toggle='tab') Развлекательные
+                                        li
+                                            a(href="#list_ip_categoty_learn", data-toggle='tab') Познавательные
+                                        li
+                                            a(href="#list_ip_categoty_sport", data-toggle='tab') Спортивные
+
+                    .col-md-6.col-sm-8.col-xs-10
+
+
+
+                        .tab-content.tv-list__list
+                            #1_list_channels_type1.tab-pane.active.toggle
+                                p.tv-list__selected-package пакет«
+                                    span HD
+                                    | »
+                                span.tv-list__list-chanels /список каналов:
+                                .tab-content
+                                    .tv-list__list-all
+                                        #list_categoty_public.tab-pane.active
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Общедоступные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Общедоступные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Общедоступные
+
+                                        #list_categoty_hd.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span HD
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span HD
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span HD
+                                        #list_categoty_fun.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Развлекательные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Развлекательные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Развлекательные
+
+
+
+                                        #list_categoty_learn.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Познавательные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Познавательные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Познавательные
+
+                                        #list_categoty_sport.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Спортивные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Спортивные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Спортивные
+
+
+                                        #list_categoty_children.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Детские
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Детские
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Детские
+
+
+                                        #list_categoty_film.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Фильмовые
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Фильмовые
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Фильмовые
+
+
+
+                                        #list_categoty_news.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Новостные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Новостные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Новостные
+
+
+
+                                        #list_categoty_music.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Музыкальные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Музыкальные
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Музыкальные
+
+                                        #list_categoty_adult.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Каналы для взрослых
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Каналы для взрослых
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Каналы для взрослых
+
+
+
+
+
+
+
+
+
+
+
+                            #2_list_channels_type2.tab-pane.toggle
+                                p.tv-list__selected-package пакет«
+                                    span HD
+                                    | »
+                                span.tv-list__list-chanels /список каналов:
+                                .tab-content
+                                    .tv-list__list-all
+                                        #list_ip_categoty_public.tab-pane.active
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Общедоступные IP
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Общедоступные IP
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Общедоступные IP
+
+                                        #list_ip_categoty_hd.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span HD IP
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span HD IP
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span HD IP
+                                        #list_ip_categoty_fun.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Развлекательные IP
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Развлекательные IP
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Развлекательные IP
+                                        #list_ip_categoty_learn.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Познавательные IP
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Познавательные IP
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Познавательные IP
+                                        #list_ip_categoty_sport.tab-pane
+                                            ul
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Спортивные IP
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Спортивные IP
+                                                li
+                                                    a(href="#")
+                                                        img(src="img/logo_tv.png")
+                                                        span Спортивные IP
+
+
+
+
+
+
+        section.form-full
+            .container
+                .row
+                    .col-md-3.col-sm-5.col-xs-5
+                        span.form-full__title подключение
+                    .col-md-4.col-sm-5.col-xs-6
+                        ul.nav.nav-tabs.tv-list__type-toggle
+
+                            li.active
+                                a(href='#form_tv_cable', data-toggle='tab') кабельное
+                            li
+                                a(href='#form_ip_tv', data-toggle='tab') ip-tv
+
+                .row
+                    .tab-content
+                        form#form_tv_cable(name="Кабельное").tab-pane.active
+
+                            .col-md-offset-3.col-md-4.col-sm-5.col-xs-5
+
+                                span Выберите нужное количество ТВ-каналов
+
+                                .designer__select-wrap
+                                    .designer__item
+                                        input(type="radio" name="canals" value="Кабельное ТВ (115 каналов) 100 Р/мес" id="cable").radio
+                                        label(for="cable") Кабельное ТВ (115 каналов) 100 Р/мес
+                                    .designer__item
+                                        input(type="radio" name="canals" value="IpTV (159 каналов) 300 Р/мес" id="ip").radio
+                                        label(for="ip") IpTV (159 каналов) 300 Р/мес
+
+                                .form-full__name
+                                    input(type="text" name="street" placeholder="Улица" required='')
+                                    input(type="text" name="fullName" placeholder="ФИО" required='')
+
+
+                            .col-md-3.col-sm-5.col-xs-5
+                                .form-full__adress
+                                    span Количество ТВ-приемников
+
+                                    .designer__select-wrap
+                                        .designer__item
+                                            input(type="radio" name="receiver" value="1 - 2" id="1-2").radio
+                                            label(for="1-2") 1 - 2
+                                        .designer__item
+                                            input(type="radio" name="receiver" value="1 - 3" id="1-3").radio
+                                            label(for="1-3") 1 - 3
+                                        .designer__item
+                                            input(type="radio" name="receiver" value="1 - 5" id="1-5").radio
+                                            label(for="1-5") 1 - 5
+
+                                .callback__form-contacts
+                                    input(type="text" name="house" placeholder="Дом" required='')
+                                    input(type="text" name="flat" placeholder="Кв." required='')
+                                    input(type="text" name="phone" placeholder="Тел." required='')
+
+                            .col-md-4.col-sm-6.col-xs-6
+
+                                .form-full__equipment
+                                    span Оборудование для подключения
+                                    .designer__select-wrap
+                                        .designer__item
+                                            input(type="radio" name="equipment" value="Выкуп приставки DVB-C 2000 Р" id="equipment_1").radio
+                                            label(for="equipment_1") Выкуп приставки DVB-C 2000 Р
+                                        .designer__item
+                                            input(type="radio" name="equipment" value="Выкуп приставки Eltex nv-102 3500 Р" id="equipment_2").radio
+                                            label(for="equipment_2") Выкуп приставки Eltex nv-102 3500 Р
+                                        .designer__item
+                                            input(type="radio" name="equipment" value="Аренда приставки 50 Р/мес" id="rent").radio
+                                            label(for="rent") Аренда приставки 50 Р/мес
+                                //button.custom__btn-form я молодец!
+                                button(href="#callBack" type="").custom__btn-form я молодец!
+                                //button(href="#callBack" type="submit").custom__btn-form я молодец!
+
+
+
+                        form#form_ip_tv.tab-pane(name="ip_tv")
+
+                            .col-md-offset-3.col-md-4.col-sm-5.col-xs-5
+
+                                span Выберите нужное количество ТВ-каналов
+
+                                .designer__select-wrap
+                                    .designer__item
+                                        input(type="radio" name="canals" value="Кабельное ТВ (115 каналов) 100 Р/мес" id="cable_ip").radio
+                                        label(for="cable_ip") Кабельное ТВ (115 каналов) 100 Р/мес
+
+                                .form-full__name
+                                    input(type="text" name="street" placeholder="Улица" required='')
+                                    input(type="text" name="fullName" placeholder="ФИО" required='')
+
+
+                            .col-md-3.col-sm-5.col-xs-5
+                                .form-full__adress
+                                    span Количество ТВ-приемников
+
+                                    .designer__select-wrap
+                                        .designer__item
+                                            input(type="radio" name="receiver" value="1 - 2" id="1-2_ip").radio
+                                            label(for="1-2_ip") 1 - 2
+                                        .designer__item
+                                            input(type="radio" name="receiver" value="1 - 3" id="1-3_ip").radio
+                                            label(for="1-3_ip") 1 - 3
+                                        .designer__item
+                                            input(type="radio" name="receiver" value="1 - 5" id="1-5_ip").radio
+                                            label(for="1-5_ip") 1 - 5
+
+                                .callback__form-contacts
+                                    input(type="text" name="house" placeholder="Дом" required='')
+                                    input(type="text" name="flat" placeholder="Кв." required='')
+                                    input(type="text" name="phone" placeholder="Тел." required='')
+
+                            .col-md-4.col-sm-6.col-xs-6
+
+                                .form-full__equipment
+                                    span Оборудование для подключения
+                                    .designer__select-wrap
+                                        .designer__item
+                                            input(type="radio" name="equipment" value="Выкуп приставки DVB-C 2000 Р" id="equipment_1_ip").radio
+                                            label(for="equipment_1_ip") Выкуп приставки DVB-C 2000 Р
+                                        .designer__item
+                                            input(type="radio" name="equipment" value="Выкуп приставки Eltex nv-102 3500 Р" id="equipment_2_ip").radio
+                                            label(for="equipment_2_ip") Выкуп приставки Eltex nv-102 3500 Р
+                                        .designer__item
+                                            input(type="radio" name="equipment" value="Аренда приставки 50 Р/мес" id="rent_ip").radio
+                                            label(for="rent_ip") Аренда приставки 50 Р/мес
+                                button(href="#callBack" type="").custom__btn-form я молодец!
+                                //button(href="#callBack" type="submit").custom__btn-form я молодец!

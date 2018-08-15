@@ -1,0 +1,288 @@
+body
+  font-size: 16px
+  font-family: $ERegular
+  background-color: $bgColorMain
+  margin: 0
+  position: relative
+  line-height: 1.6
+  overflow-x: hidden
+  -webkit-tap-highlight-color: transparent
+
+  //внешний вид скроллбара
+  //scrollbar-base-color: $scroll_barr_color
+  //scrollbar-arrow-color: $scroll_barr_color
+  //внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+  //&::-webkit-scrollbar
+    width: 17px
+  //&::-webkit-scrollbar-thumb
+    background-color: $scroll_barr_color
+    &:hover
+      background-color: darken($scroll_barr_color, 10%)
+  //&::-webkit-scrollbar-track-piece
+    background-color: transparent
+
+p,ul
+  padding: 0
+  margin: 0
+
+li
+  list-style: none
+
+a
+  color: #000
+  text-decoration-color: transparent
+  &:hover, &:focus
+    color: #000
+  &:visited
+    outline: none
+h1
+  margin: 0
+
+a:focus, a:hover
+  text-decoration: none
+  text-decoration-color: transparent
+
+.cusom__button
+  display: inline-block
+  border: none
+  color: #fff
+  text-decoration: none
+  padding: 15px 45px
+  font-size: 13px
+  text-transform: uppercase
+  font-weight: 600
+  letter-spacing: 3px
+  border-radius: 2px
+  text-align: center
+  position: relative
+  outline: none
+  transition: background-color .1s ease
+  &::after
+    transition: background-color .2s ease
+    position: absolute
+    content: ''
+    height: 4px
+    bottom: 0
+    width: 100%
+    //background-color: darken($accent, 50%)
+    opacity: .18
+    border-bottom-left-radius: 2px
+    border-bottom-right-radius: 2px
+    left: 0
+  &:focus, &:hover
+    text-decoration: none
+    color: #fff
+  &:hover
+    //background-color: lighten($accent, 5%)
+    &::after
+      opacity: .22
+
+.custom__btn-form
+  border-radius: 0
+  display: inline-block
+  border: none
+  background-color: $text_greenActive_color
+  text-decoration: none
+  padding: 39px 40px
+  font-size: 30px
+  text-transform: uppercase
+  letter-spacing: 3px
+  text-align: center
+  position: relative
+  outline: none
+  //position: absolute
+  font-weight: 700
+  //box-shadow: 0 2px 17px rgba(7, 78, 31, 0), 0 0 88.9px 4.1px rgba(206, 242, 0, 0)
+  transition: all .5s ease
+  box-shadow: 0 2px 17px rgba(7, 78, 31, 0.51), 0 0 88.9px 4.1px rgba(206, 242, 0, 0.55)
+  //&:hover
+  &:focus
+    outline: none
+
+
+input, textarea, select
+  background-color: #fff
+  border: 1px solid transparent
+  border-radius: 5px
+  padding: 8px 22px
+  outline: none
+  display: block
+  font-size: 16px
+  color: #000
+  //стиль для черточки
+  &:focus:required:invalid
+    color: #717171
+  &::-webkit-input-placeholder
+    color: #717171
+  &::-moz-placeholder
+    color: #717171
+    opacity: 1
+  &:-ms-input-placeholder
+    color: #717171
+  option
+    color: #717171
+
+.slider__btn
+  width: 30px
+  height: 30px
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 33px
+  color: $text_black_color
+  background-color: $text_white_color
+  &:hover
+    background-color: $btn_color
+
+//custom checkbox
+
+.radio
+  vertical-align: top
+  width: 17px
+  height: 17px
+  margin: 0 3px 0 0
+
+.radio + label
+  cursor: pointer
+.radio:not(checked)
+  position: absolute
+  opacity: 0
+
+.radio:not(checked) + label
+  position: relative
+  padding: 0 0 0 10px
+
+.radio:not(checked) + label:before
+  content: ''
+  position: absolute
+  top: 3px
+  left: -10px
+  width: 16px
+  height: 16px
+  border: 1px solid #525252
+  border-radius: 50%
+  background: transparent
+
+.radio:not(checked) + label:after
+  content: ''
+  position: absolute
+  top: 6px
+  left: -7px
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  background: #aecb06
+  box-shadow: inset 0 -1px 4px black, 0 0 5px #cef200
+  opacity: 0
+  transition: all .2s
+.radio:checked + label:after
+  opacity: 1
+
+
+
+input.error
+  & + label
+    color: red
+
+#form label.error
+  display: none !important
+
+.form-full input.error
+  transition: all .3s ease
+  border-color: red
+
+.default-section
+  position: relative
+  padding: 43px 0 65px 0
+  height: 550px
+  background-size: cover
+  .container
+    display: flex
+    height: 100%
+  &__title
+    display: flex
+    height: 100%
+    flex-direction: column
+    justify-content: space-between
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    background-color: rgba(0,0,0, .7)
+  &__wrap
+    display: flex
+  &__info
+    padding-top: 7px
+    display: block
+    width: 220px
+    font-size: 22px
+    font-family: $ESemiBold
+    color: $text_white_color
+    text-transform: uppercase
+    line-height: 22px
+    letter-spacing: 2px
+  &__top
+    li
+      display: inline-block
+
+    li.active
+      a
+        color: #aecb06
+        font-family: $ERegular
+        font-size: 12px
+        border-bottom: 1px solid #aecb06
+        &:hover
+          border-bottom: 1px solid transparent
+    li + li
+      margin-left: 10px
+    a
+      color: $text_white_color
+      font-family: $ERegular
+      font-size: 12px
+      text-transform: uppercase
+      border-bottom:
+      border-bottom: 1px solid $text_white_color
+      transition: all .3s
+      &:hover
+        border-bottom: 1px solid transparent
+
+  &__main-content
+    h1
+      font-size: 60px
+      font-family: $EBold
+      color: $text_white_color
+      text-transform: uppercase
+      letter-spacing: 2px
+      line-height: 86px
+    p
+      font-family: $LSemiboldIt
+      font-size: 20px
+      color: $text_white_color
+      line-height: 26px
+  &__article
+    padding: 66px 0
+    p
+      font-family: $LRegular
+      font-size: 18px
+      color: $text_greyLight_color
+      line-height: 24px
+      & + p
+        margin-top: 20px
+
+.customBtn
+  z-index: 999
+  cursor: pointer
+  &:before
+    content: ""
+    display: block
+    @include sprite($arrow_right_green)
+.customNextBtn
+  &:before
+    transform: rotate(180deg)
+
+.custom_paddind
+  padding-left: 0
+  padding-right: 1px

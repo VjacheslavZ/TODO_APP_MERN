@@ -1,0 +1,110 @@
+extends ../base
+
+block title
+    | Index page 2
+
+block main
+    main#idex_page_business.idex_page_business
+        //Секция сервис
+        section.service
+            .container
+                .row
+
+                    .col-lg-5.col-md-5.col-sm-5.col-xs-16.custom_paddind
+                        h1.service__title Интернет для бизнеса
+
+                        ul.service__items-swich
+                            li.service__item
+                                a(href='#').service__item-content
+                                    //div.service__img
+                                        img(src="img/search_ic.png").service__img_default
+                                        img(src="img/search_ic-hover.png").service__img_hover
+                                    div
+                                        span.service__name Малому бизнесу
+                                        span.service__description надежный и быстрый, до 100 Мбит/с
+                                    .service__item-arrow
+
+                            li.active.service__item
+                                a(href='#').service__item-content
+                                    //div.service__img
+                                        img(src="img/computer_ic.png").service__img_default
+                                        img(src="img/computer_ic-hover.png").service__img_hover
+                                    div
+                                        span.service__name Бизнес-центру
+                                        span.service__description все самое интересное на 115 (49 hd) каналах
+                                    .service__item-arrow
+
+                            li.service__item
+                                a(href='#').service__item-content
+                                    //div.service__img
+                                        img(src="img/shopping_cart_ic.png").service__img_default
+                                        img(src="img/shopping_cart_ic-hover.png").service__img_hover
+                                    div
+                                        span.service__name Торговому центру
+                                        span.service__description безлимитный домашний телефон
+                                    .service__item-arrow
+
+                            li.service__item
+                                a(href='#').service__item-content
+                                    //div.service__img
+                                        img(src="img/safeBox.png").service__img_default
+                                        img(src="img/safeBox-hover.png").service__img_hover
+                                    div
+                                        span.service__name Банкам
+                                        span.service__description безлимитный домашний телефон
+                                    .service__item-arrow
+
+                            //после заинклудить эти табы
+                            //ul.nav.nav-tabs.service__price-builder
+                                li.active
+                                    a(href='#1', data-toggle='tab') конструктор тарифов
+                                li
+                                    a(href='#2', data-toggle='tab') посмотреть готовые тарифы
+
+                    .col-lg-11.col-md-11.col-sm-11.col-xs-16.custom_paddind
+                        #service__slider.owl-carousel.owl-theme.service__slider
+                            div
+                                img(src="img/slider_baner.jpg")
+                            div
+                                img(src="img/slider_baner.jpg")
+                            div
+                                img(src="img/slider_baner.jpg")
+
+        //секция новости
+        section.news
+            .container
+                // заинклудить
+                .row
+                    .col-lg-16.col-xs-16
+                        p.news__title новости
+                        a(href="#").news__all-news Архив новостей
+                .news__wrap
+                    .row
+                        .col-sm-4.col-xs-8
+                            a(href="#").news__link
+                                .news__photo
+                                    img(src="img/news_1.jpg")
+                                    span 18 августа 2017
+                                p Заголовок новости номер раз
+                                p Подзаголовок, отражающий суть новости в двух-трех предложениях
+                        .col-sm-4.col-xs-8
+                            a(href="#").news__link
+                                .news__photo
+                                    img(src="img/news_2.jpg")
+                                    span 9 августа 2017
+                                p Или два... мне просто нужно было посмотреть...
+                                p Подзаголовок, отражающий суть новости в двух-трех предложениях
+                        .col-sm-4.col-xs-8
+                            a(href="#").news__link
+                                .news__photo
+                                    img(src="img/news_3.jpg")
+                                    span 8 августа 2017
+                                p Как оно будет выглядеть в несколько строк
+                                p Подзаголовок, отражающий суть новости в двух-трех предложениях
+                        .col-sm-4.col-xs-8
+                            a(href="#").news__link
+                                .news__photo
+                                    img(src="img/news_4.jpg")
+                                    span 8 августа 2017
+                                p Или два... мне просто нужно было посмотреть...
+                                p Подзаголовок, отражающий суть новости в двух-трех предложенияхжающий суть новости в двух-трех предложениях

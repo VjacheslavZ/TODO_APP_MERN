@@ -1,0 +1,69 @@
+extends ../base
+
+block title
+    | Контакты
+
+block main
+    script(src='https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU', type='text/javascript')
+
+    main#contacts.contacts-page
+
+        section.contacts
+            .container
+                .row
+                    .col-xs-16
+                        a(href="#").contacts__title Контакты
+                .row
+                    .col-lg-offset-3.col-lg-4.col-sm-offset-2.col-md-6.col-sm-7.col-xs-9
+
+                        .contacts__main.contacts__main-height
+                            ul.contacts__ofice
+                                li Офис продаж
+
+                                li
+                                    a(href="#") г. Тюмень, ул. Республики, д. 243 корп. 1
+                                li
+                                    a(href="tel:3452500020") (3452) 500-020
+                                li
+                                    a(href="mailto:info@vmeste72.ru") info@vmeste72.ru
+
+                        .contacts__main
+                            .contacts__schedule-wrap
+                                span.contacts__schedule-title Режим работы:
+                                table.contacts__schedule
+                                    tr
+                                        td пн-чт:
+                                        td 09:00 — 18:00
+                                    tr
+                                        td пт:
+                                        td 09:00 — 17:00
+                                    tr
+                                        td сб-вс:
+                                        td Выходной
+
+
+                    .col-lg-4.col-md-offset-1.col-md-6.col-sm-6.col-xs-7
+                        .contacts__main.contacts__main-height
+                            ul.contacts__support
+                                li Техническая поддержка
+
+                                li
+                                    a(href="tel:3452500020") (3452) 500-020
+                                li
+                                    a(href="mailto:support@vmeste72.ru") support@vmeste72.ru
+                        .contacts__main
+                            .contacts__schedule-wrap
+                                span.contacts__schedule-title Режим работы:
+                                table.contacts__schedule
+                                    td пн-вс:
+                                    td 09:00 — 22:00
+                                .footer__social-networks
+                                    a(href="#" target="_blank").footer__tw
+                                    a(href="#" target="_blank").footer__vk
+
+        section.map
+            #map
+
+
+
+
