@@ -4,5 +4,26 @@ block title
     | Index page 2
 
 block main
-    main#idex_page_business.idex_page_business
-        h1 CREATE TASK PAGE
+    .create
+        .page__title_small
+            .nav__block
+                button.hamburger.hamburger--spin.js-hamburger.is-active(type='button')
+                    span.hamburger-box
+                        span.hamburger-inner
+            h1 Add Title
+            a(href='').list__add
+                i.fas.fa-plus
+
+        .create__data
+            form
+                .create__description
+                    input(type='text' placeholder='Short description' name='task_short_desc').create__input
+                .create__duration
+                    span From
+                    input(type='date' placeholder='' name='from').create__input
+                .create__duration
+                    span To
+                    input(type='date' placeholder='' name='to').create__input
+                .create__description
+                    input(type='text' placeholder='Location' name='location').create__input
+
