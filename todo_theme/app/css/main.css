@@ -150,7 +150,7 @@ a:focus, a:hover {
           text-decoration-color: transparent; }
 
 input {
-  outline-width: 0px;
+  outline-width: 0;
   outline-color: transparent; }
 
 .content__wrap {
@@ -161,7 +161,7 @@ input {
 .header {
   width: 100%; }
 
-.auth {
+.auth, .form__regiter {
   background: url("../img/login__bg.jpg") repeat;
   height: 100vh;
   display: -webkit-box;
@@ -183,9 +183,12 @@ input {
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.form__login {
+.form__regiter {
+  background: url("../img/register__bg.jpg") repeat; }
+
+.form__auth {
   width: 100%; }
-  .form__login .button__form-action {
+  .form__auth .button__form-action {
     position: absolute;
     bottom: 115px;
     left: 0;

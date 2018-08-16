@@ -4,5 +4,19 @@ block title
     | Index page 2
 
 block main
-    main#idex_page_business.idex_page_business
-        h1 REGISTER PAGE
+    .auth
+        form.form__auth
+            .input__wrap
+                i.fas.fa-user
+                input.input__default(placeholder='Name' name='name')
+            .input__wrap
+                i.fas.fa-user
+                input.input__default(placeholder='Email' name='email')
+            .input__wrap
+                i.fas.fa-lock
+                input.input__default(placeholder='Password' name='password')
+            .input__wrap
+                i.fas.fa-lock
+                input.input__default(placeholder='Password confirm' name='password_confirm')
+
+            button.button__form-action(type='submit') Join

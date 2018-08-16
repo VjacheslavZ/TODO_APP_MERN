@@ -13,9 +13,23 @@
   </head>
   <body>
     <div class="content__wrap">
-      <main class="idex_page_business" id="idex_page_business">
-        <h1>REGISTER PAGE</h1>
-      </main>
+      <div class="auth">
+        <form class="form__auth">
+          <div class="input__wrap"><i class="fas fa-user"></i>
+            <input class="input__default" placeholder="Name" name="name">
+          </div>
+          <div class="input__wrap"><i class="fas fa-user"></i>
+            <input class="input__default" placeholder="Email" name="email">
+          </div>
+          <div class="input__wrap"><i class="fas fa-lock"></i>
+            <input class="input__default" placeholder="Password" name="password">
+          </div>
+          <div class="input__wrap"><i class="fas fa-lock"></i>
+            <input class="input__default" placeholder="Password confirm" name="password_confirm">
+          </div>
+          <button class="button__form-action" type="submit">Join</button>
+        </form>
+      </div>
       <footer class="footer">Footer</footer>
     </div>
     <script src="js/libs.min.js"></script>
