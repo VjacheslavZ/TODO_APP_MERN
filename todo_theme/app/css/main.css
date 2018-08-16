@@ -264,7 +264,9 @@ input, button {
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding-top: 15px; }
+  padding-top: 15px;
+  padding-bottom: 35px;
+  position: relative; }
   .page__title_small h1 {
     font: 50px Roboto;
     color: #ffffff;
@@ -385,6 +387,84 @@ input, button {
   margin: 5px auto 0 auto;
   /*TODO remove in when color get from server*/
   background-color: #50d2c2; }
+
+.nav__block .list__total {
+  margin-right: 30px;
+  color: #bebebe; }
+
+.nav__block .fa-share {
+  color: #bebebe; }
+
+.list__add {
+  position: absolute;
+  font-size: 40px;
+  width: 75px;
+  height: 75px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ff3366;
+  color: #fff;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  bottom: -37px;
+  right: 31px;
+  -webkit-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease; }
+  .list__add:hover {
+    cursor: pointer; }
+
+.list__tasks .list__task {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 80px;
+  -webkit-transition: background-color .3s ease;
+  -o-transition: background-color .3s ease;
+  transition: background-color .3s ease;
+  border-bottom: 1px solid #f3f3f4; }
+  .list__tasks .list__task:hover {
+    background-color: #cfcfd7; }
+  .list__tasks .list__task a {
+    padding-left: 50px;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 23px; }
+    .list__tasks .list__task a:before {
+      font-family: FontAwesome;
+      content: "\f00c";
+      position: absolute;
+      left: 11px; }
+
+.list__tasks .list__task_done {
+  background-color: #f3f3f4;
+  border-left: 5px solid #50d2c2; }
+  .list__tasks .list__task_done a:before {
+    color: #50d2c2; }
 
 .footer {
   background: #f2f2f2; }

@@ -1,0 +1,51 @@
+.nav__block
+  .list__total
+      margin-right: 30px
+      color: #bebebe
+  .fa-share
+    color: #bebebe
+.list__add
+  position: absolute
+  font-size: 40px
+  width: 75px
+  height: 75px
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #ff3366
+  color: #fff
+  border-radius: 50%
+  bottom: -37px
+  right: 31px
+  transition: color .3s ease
+  &:hover
+    cursor: pointer
+
+.list__tasks
+  .list__task
+    display: flex
+    align-items: center
+    width: 100%
+    height: 80px
+    transition: background-color .3s ease
+    border-bottom: 1px solid #f3f3f4
+    &:hover
+      background-color: #cfcfd7
+    a
+      padding-left: 50px
+      width: 100%
+      height: 100%
+      display: flex
+      align-items: center
+      font-size: 23px
+      &:before
+        font-family: FontAwesome
+        content: "\f00c"
+        position: absolute
+        left: 11px
+  .list__task_done
+    background-color: #f3f3f4
+    border-left: 5px solid #50d2c2
+    a
+      &:before
+        color: #50d2c2

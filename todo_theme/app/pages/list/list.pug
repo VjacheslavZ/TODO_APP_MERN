@@ -4,5 +4,30 @@ block title
     | Index page 2
 
 block main
-    main#idex_page_business.idex_page_business
-        h1 LIST OF CATEGORY TASKS PAGE
+    .list
+        .page__title_small
+            .nav__block
+                button.hamburger.hamburger--spin.js-hamburger.is-active(type='button')
+                    span.hamburger-box
+                        span.hamburger-inner
+
+                .nav__control
+                    span.list__total 25
+                    a(href='share.html')
+                        i.fas.fa-share
+                .search__block.isActive
+                    input(name='search')
+                    i.fas.fa-search.active
+            h1 Shop
+            a(href='').list__add
+                i.fas.fa-plus
+        .list__tasks
+            ul
+                li.list__task
+                    a(href='task.html') Todo this task
+                li.list__task
+                    a(href='task.html') Todo this task
+                li.list__task.list__task_done
+                    a(href='task.html') Todo this task
+                li.list__task
+                    a(href='task.html') Todo this task
