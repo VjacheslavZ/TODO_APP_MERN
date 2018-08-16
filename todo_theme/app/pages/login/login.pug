@@ -8,9 +8,11 @@ block main
         form.form__auth
             .input__wrap
                 i.fas.fa-user
-                input.input__default(placeholder='Email' name='email')
+                input.input__default(placeholder='Email' name='email' required='required')
+                .invalid-feedback Reason description
             .input__wrap
                 i.fas.fa-lock
-                input.input__default(placeholder='Password' name='password')
+                input.input__default(placeholder='Password' name='password' required='required')
+                .invalid-feedback Reason description
 
             button.button__form-action(type='submit') Sign In

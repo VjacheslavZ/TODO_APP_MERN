@@ -16,15 +16,17 @@
       <div class="auth">
         <form class="form__auth">
           <div class="input__wrap"><i class="fas fa-user"></i>
-            <input class="input__default" placeholder="Email" name="email">
+            <input class="input__default" placeholder="Email" name="email" required="required">
+            <div class="invalid-feedback">Reason description</div>
           </div>
           <div class="input__wrap"><i class="fas fa-lock"></i>
-            <input class="input__default" placeholder="Password" name="password">
+            <input class="input__default" placeholder="Password" name="password" required="required">
+            <div class="invalid-feedback">Reason description</div>
           </div>
           <button class="button__form-action" type="submit">Sign In</button>
         </form>
       </div>
-      <footer class="footer">Footer</footer>
+      <!--footer.footer Footer-->
     </div>
     <script src="js/libs.min.js"></script>
     <script src="js/common.js"></script>

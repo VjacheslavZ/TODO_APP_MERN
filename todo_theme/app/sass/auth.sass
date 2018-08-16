@@ -15,15 +15,20 @@
     bottom: 115px
     left: 0
     right: 0
+    transition: background-color .3s ease
+    cursor: pointer
+    &:hover
+      background-color: #ef1b50
 
 .input__wrap
   border-bottom: 2px solid #82807f
   width: 100%
   position: relative
+  box-sizing: border-box
   .fas
     position: absolute
     top: 10px
-    left: 200px
+    left: 36px
     color: #939393
 .input__wrap + .input__wrap
   margin-top: 15px
@@ -34,7 +39,7 @@
   color: #fff
   font: 28px Roboto
   font-weight: 300
-  padding-left: 220px
+  padding-left: 80px
   padding-bottom: 5px
   position: relative
   &::placeholder

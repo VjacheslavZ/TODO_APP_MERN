@@ -1,5 +1,9 @@
 .create__data
   width: 100%
+  position: relative
+  .list__add
+    top: -40px
+    border: none
   .create__input
     padding-left: 25px
     border: none
@@ -15,12 +19,19 @@
       color: #bebebe
     &:-ms-input-placeholder
       color: #bebebe
+.create__description
+  position: relative
+  .invalid-feedback
+    bottom: 2px
+    position: absolute
+    left: -53px
 .create__duration
   display: flex
   align-items: center
   justify-content: space-around
   border-bottom: 1px solid #bebebe
   padding-left: 25px
+  position: relative
   span
     color: #bebebe
     width: 40px
@@ -28,4 +39,9 @@
     border-bottom: none
     padding-left: 0
     margin-left: 50px
+  .invalid-feedback
+    bottom: 2px
+    position: absolute
+    left: -53px
+
 
