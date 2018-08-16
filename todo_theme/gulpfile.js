@@ -150,7 +150,7 @@ gulp.task("watch",[ "browser-sync", "css-libs", "script", "scripts-libs", "pages
     gulp.watch("app/pages/**/*.pug", ['pages']);
     gulp.watch('app/sass/*.sass', ["sass"]);
     gulp.watch('app/sass/libs.sass', ["css-libs"]);//ели подключен новый плагин
-    gulp.watch('app/img/**/*', ["img"]);
+    // gulp.watch('app/img/**/*', ["img"]);
     gulp.watch("app/pages/**/*.js", ["script"]);
 
 });
