@@ -1,4 +1,4 @@
-var gulp         = require("gulp"),
+const gulp         = require("gulp"),
     sass         = require('gulp-sass'),
     browserSync  = require('browser-sync'),
     cssnano      = require("gulp-cssnano"),
@@ -12,11 +12,11 @@ var gulp         = require("gulp"),
     notify = require("gulp-notify");
     sourceMaps = require('gulp-sourcemaps');
 
-gulp.task("sass", function () {
+gulp.task("sass", () => {
     return gulp.src([
             'app/sass/main.sass'
         ])
-	    .pipe(sourceMaps.init())
+        .pipe(sourceMaps.init())
         .pipe(sass())
         .on('error', function(err) {
             const type = err.type || '';
@@ -30,12 +30,12 @@ gulp.task("sass", function () {
             this.emit('end');
         })
         .pipe(autoPrefixer(["last 15 versions", "> 1%", "ie 8", "ie 7"], { cascade: true }))
-	    .pipe(sourceMaps.write('.'))
+        .pipe(sourceMaps.write('.'))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.stream())
 });
 
-gulp.task("css-libs", ['sass'], function () {
+gulp.task("css-libs", ['sass'], () => {
     return gulp.src("app/sass/libs.sass")
         .pipe(sass())
         .pipe(cssnano())
@@ -43,7 +43,7 @@ gulp.task("css-libs", ['sass'], function () {
         .pipe(gulp.dest("app/css"));
 });
 
-gulp.task("browser-sync", function () {
+gulp.task("browser-sync", () => {
     browserSync({
         server:{
             baseDir: "app"
@@ -53,7 +53,7 @@ gulp.task("browser-sync", function () {
     });
 });
 
-gulp.task("img-min", function () {
+gulp.task("img-min", () => {
    return gulp.src("app/img/**/*.jpg")
        .pipe(cache(imagemin({
            interlaced: true,
@@ -64,7 +64,7 @@ gulp.task("img-min", function () {
        .pipe(gulp.dest("dist/img"));
 });
 
-gulp.task("pages", function() {
+gulp.task("pages", () => {
     return gulp.src([
         "app/pages/index/index.pug",
         "app/pages/login/login.pug",
@@ -74,7 +74,7 @@ gulp.task("pages", function() {
         "app/pages/create/create.pug",
         "app/pages/time_line/time_line.pug",
     ])
-        .pipe(pug({pretty: true}))  //с переносом pretty: true
+        .pipe(pug({pretty: true}))
         .on('error', notify.onError(function (error) {
             return error
         }))
@@ -83,9 +83,8 @@ gulp.task("pages", function() {
         .pipe(browserSync.stream())
 });
 
-gulp.task("watch",[ "browser-sync", "css-libs", "pages"], function () {
+gulp.task("watch",[ "browser-sync", "css-libs", "pages"],  () => {
     gulp.watch("app/pages/**/*.pug", ['pages']);
     gulp.watch('app/sass/*.sass', ["sass"]);
-    gulp.watch('app/sass/libs.sass', ["css-libs"]);//ели подключен новый плагин
-    gulp.watch("app/pages/**/*.js", ["script"]);
+    gulp.watch('app/sass/libs.sass', ["css-libs"]);
 });
