@@ -15,11 +15,14 @@ var gulp         = require("gulp"),
     gulpCopy    = require('gulp-copy'),
     spritesmith = require('gulp.spritesmith');
     notify = require("gulp-notify");
+    sourceMaps = require('gulp-sourcemaps');
+    gulpif = require('gulp-if');
 
 gulp.task("sass", function () {
     return gulp.src([
             'app/sass/main.sass'
         ])
+	    .pipe(sourceMaps.init())
         .pipe(sass())
         .on('error', function(err) {
             const type = err.type || '';
@@ -33,6 +36,7 @@ gulp.task("sass", function () {
             this.emit('end');
         })
         .pipe(autoPrefixer(["last 15 versions", "> 1%", "ie 8", "ie 7"], { cascade: true }))
+	    .pipe(sourceMaps.write('.'))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.stream())
 });

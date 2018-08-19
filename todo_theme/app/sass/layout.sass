@@ -1,3 +1,59 @@
+.content__wrap
+  max-width: 500px
+  min-height: 100vh
+  margin: 0 auto
+  border: 1px solid #bebebe
+  position: relative
+.bg_nav
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  overflow: hidden
+  transition: all .3s ease
+  z-index: -1
+  opacity: 0
+  visibility: hidden
+  pointer-events: none
+.sidenav
+  height: 100%
+  position: absolute
+  top: 0
+  right: 0
+  background-color: #111
+  overflow-x: hidden
+  transition: 0.5s
+  padding: 60px 0 0 30px
+  transform: translateX(100%)
+  width: 320px
+  z-index: 9
+  ul
+    li
+      a
+        color: #818181
+        font-size: 30px
+        &:hover
+          color: #f1f1f1
+    li + li
+      margin-top: 25px
+.bg_nav.active
+  z-index: 9999
+  background-color: rgba(0, 0, 0, 0.74)
+  opacity: 1
+  visibility: visible
+  pointer-events: auto
+  .sidenav
+    transform: translateX(0%)
+
+.hamburger
+  z-index: 9999
+.hamburger-inner,
+.hamburger-inner:after,
+.hamburger-inner:before
+    background-color: #bebebe
+
+
 .page__title_small
   height: 200px
   background: #bebebe url("../img/page_title_small.jpg") no-repeat
@@ -49,6 +105,7 @@
       color: #bebebe
     &.active
       color: #bebebe
+
 .list__add
   position: absolute
   font-size: 40px
@@ -66,6 +123,14 @@
   z-index: 666
   &:hover
     cursor: pointer
+    color: #000
+
 .invalid-feedback
   color: #ac2424
   padding-left: 79px
+.fas
+  transition: color .3s ease
+a
+  &:hover
+    .fa-share
+      color: #000
