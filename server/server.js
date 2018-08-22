@@ -5,15 +5,16 @@ const path = require('path');
 const passport = require('passport');
 
 const users = require('./routes/api/users');
+const groups = require('./routes/api/groups');
+
 const app = express();
 
 //body parser middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use((bodyParser.json()));
 
-//app.get('/', (req, res) => res.send('Hello Dev !!'));
-
 app.use('/api/users', users);
+app.use('/api/groups', groups);
 
 //DB config
 const db = require('./config/keys').mongoURI;
