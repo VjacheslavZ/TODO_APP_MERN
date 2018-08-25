@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { loginUser } from '../../actions/authActions';
+
+
 import FaIcon from '../common/FaIcon';
 import TextFieldCroup from '../common/TextFieldGroup'
+
 
 class Login extends Component {
 	constructor() {
@@ -12,16 +16,25 @@ class Login extends Component {
 			email: '',
 			password: '',
 			errors: {},
-		}
+		};
 
+		this.onChange = this.onChange.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
 	}
 
 	onChange(e) {
-
+		this.setState({ [e.target.name]: e.target.value})
 	}
 
 	onSubmit(e) {
+		e.preventDefault();
 
+		const userData = {
+			email: this.state.email,
+			password: this.state.password,
+		};
+
+		this.props.loginUser(userData);
 	}
 
 	render() {
