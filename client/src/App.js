@@ -10,8 +10,11 @@ import store from './store'
 
 import './App.css';
 
+import PrivateRoute from './components/common/PrivateRoute'
+
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
+import Groups from './components/groups/Groups'
 
 //check token
 if(localStorage.jwtToken) {
@@ -42,6 +45,11 @@ class App extends Component {
                         <div className="content__wrap">
                             <Route exact path='/login' component={Login}/>
                             <Route exact path='/register' component={Register}/>
+
+                            <Switch>
+                                <PrivateRoute exact path='/groups' component={Groups}/>
+                            </Switch>
+
                         </div>
                     </div>
                 </Router>
