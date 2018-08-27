@@ -34,11 +34,11 @@ module.exports = function validateRegisterInput(data) {
 	}
 
 	if (Validator.isEmpty(data.password_confirm)) {
-		errors.password2 = 'Confirm Password field is required';
+		errors.password_confirm = 'Confirm Password field is required';
 	}
 
 	if (!Validator.equals(data.password, data.password_confirm)) {
-		errors.password2 = 'Passwords must match';
+		errors.password_confirm = 'Passwords must match';
 	}
 
 	return {

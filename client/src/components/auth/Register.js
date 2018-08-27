@@ -111,7 +111,7 @@ class Register extends Component {
 							value={this.state.password_confirm}
 							type='password'
 							onChange={this.onChange}
-							error={errors.password}
+							error={errors.password_confirm}
 						/>
 					</div>
 

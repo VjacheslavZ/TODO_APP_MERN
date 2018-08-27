@@ -540,6 +540,9 @@ a:hover .fa-share {
 
 .footer {
   background: #000; }
-
+.is-invalid {
+  color: #ac2424;
+  transition: color .3s ease;
+}
 /*# sourceMappingURL=main.css.map */
 

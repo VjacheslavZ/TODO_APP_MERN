@@ -83,7 +83,7 @@ class Login extends Component {
 							placeholder="Password"
 							required="required"
 							value={this.state.password}
-							type='text'
+							type='password'
 							onChange={this.onChange}
 							error={errors.password}
 						/>

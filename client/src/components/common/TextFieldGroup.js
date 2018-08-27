@@ -21,7 +21,7 @@ const TextFieldCroup = ({
 			       type={type}
 			       onChange={onChange}
 			       required={required}
-			       className={className}
+			       className={classnames(className, {'is-invalid': error})}
 			       disabled={disabled}
 			/>
 

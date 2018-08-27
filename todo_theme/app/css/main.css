@@ -313,6 +313,12 @@ a:hover .fa-share {
   color: #fff;
   font: 30px "Roboto"; }
 
+.is-invalid {
+  color: #ff445f;
+  -webkit-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease; }
+
 .groups__categories ul {
   width: 100%;
   display: -webkit-box;
