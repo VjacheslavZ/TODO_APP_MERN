@@ -7,5 +7,5 @@ import navBarReduser from './navBarReducer';
 export default combineReducers({
 	auth: authReducer,
 	errors: errorReducer,
-	isActiveNavBar: navBarReduser
+	navBar: navBarReduser
 });

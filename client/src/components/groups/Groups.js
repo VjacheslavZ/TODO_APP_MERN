@@ -12,20 +12,17 @@ class Groups extends Component {
 		this.state = {
 			isActiveNavBar: false
 		}
-
-		// this.onToggleNavBar = this.onToggleNavBar.bind(this);
 	}
 
 	onToggleNavBar() {
-		const stateNavBar =  this.state.isActiveNavBar;
+		const {isActiveNavBar}=  this.state;
 
-		this.props.toggleNavBar(stateNavBar)
+		this.props.toggleNavBar(isActiveNavBar)
 	}
 	
 	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
 		this.setState({
-			isActiveNavBar: nextProps.isActiveNavBar.isActiveNavBar
+			isActiveNavBar: nextProps.navBar.isActiveNavBar
 		})
 	}
 
@@ -89,7 +86,7 @@ class Groups extends Component {
 Groups.propTypes = {};
 
 const mapStateToProps = (state) => ({
-	isActiveNavBar: state.isActiveNavBar
+	navBar: state.navBar
 });
 
 export default connect(mapStateToProps, {toggleNavBar})(Groups);
