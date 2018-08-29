@@ -102,7 +102,7 @@ input, button {
 
 .page__title_small {
   height: 200px;
-  background: #bebebe url("./img/page_title_small.jpg") no-repeat;
+  background: #bebebe url("../img/page_title_small.jpg") no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   display: -webkit-box;
@@ -220,7 +220,7 @@ a:hover .fa-share {
 
 .auth,
 .form__register {
-  background: #bebebe url("./img/login__bg.jpg") no-repeat;
+  background: #bebebe url("../img/login__bg.jpg") no-repeat;
   height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -242,7 +242,7 @@ a:hover .fa-share {
   flex-direction: column; }
 
 .form__register {
-  background: url("./img/register__bg.jpg") no-repeat; }
+  background: url("../img/register__bg.jpg") no-repeat; }
 
 .form__auth {
   width: 100%; }

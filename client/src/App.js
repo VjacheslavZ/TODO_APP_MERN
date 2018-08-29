@@ -8,7 +8,8 @@ import {logoutUser, setCurrentUser} from './actions/authActions';
 import { Provider } from 'react-redux';
 import store from './store'
 
-import './App.css';
+import './styles/libs.min.css';
+import './styles/App.css';
 
 import PrivateRoute from './components/common/PrivateRoute'
 
@@ -43,7 +44,7 @@ class App extends Component {
                 <Router>
                     <div className="App">
                         <div className="content__wrap">
-                            <Route exact path='/login' component={Login}/>
+                            <Route exact path='/' component={Login}/>
                             <Route exact path='/register' component={Register}/>
 
                             <Switch>

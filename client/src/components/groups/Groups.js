@@ -1,29 +1,51 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import SideNav from '../sideNav/SideNav'
+import { toggleNavBar } from '../../actions/sideNavActions';
+
 class Groups extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			isActiveNavBar: false
+		}
+
+		// this.onToggleNavBar = this.onToggleNavBar.bind(this);
+	}
+
+	onToggleNavBar() {
+		const stateNavBar =  this.state.isActiveNavBar;
+
+		this.props.toggleNavBar(stateNavBar)
+	}
+	
+	componentWillReceiveProps(nextProps) {
+		console.log(nextProps);
+		this.setState({
+			isActiveNavBar: nextProps.isActiveNavBar.isActiveNavBar
+		})
+	}
+
 	render() {
 		return (
 			<Fragment>
-				<div className="bg_nav active">
-					<div className="sidenav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="register.html">register</a></li>
-							<li><a href="login.html">login</a></li>
-							<li><a href="create.html">create</a></li>
-							<li><a href="groups.html">groups</a></li>
-							<li><a href="list.html">list</a></li>
-							<li><a href="time_line.html">time line</a></li>
-						</ul>
-					</div>
-				</div>
+				<SideNav />
 
 				<div className="groups">
 					<div className="page__title_small">
 						<div className="nav__block">
-							<button className="hamburger hamburger--spin js-hamburger is-active" type="button"><span
-								className="hamburger-box"><span className="hamburger-inner"></span></span></button>
+
+							<button className="hamburger hamburger--spin js-hamburger is-active"
+							        type="button"
+							        onClick={() => this.onToggleNavBar()}>
+								<span className="hamburger-box">
+									<span className="hamburger-inner"> </span>
+								</span>
+							</button>
+
 							<div className="search__block isActive">
 								<input name="search"/><i className="fas fa-search active"></i>
 							</div>
@@ -60,12 +82,14 @@ class Groups extends Component {
 					</div>
 				</div>
 			</Fragment>
-
-
 		);
 	}
 }
 
 Groups.propTypes = {};
 
-export default Groups;
+const mapStateToProps = (state) => ({
+	isActiveNavBar: state.isActiveNavBar
+});
+
+export default connect(mapStateToProps, {toggleNavBar})(Groups);
