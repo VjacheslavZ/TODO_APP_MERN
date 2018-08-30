@@ -5,12 +5,37 @@ import PropTypes from 'prop-types';
 
 import SideNavBtn from '../common/SideNavBtn';
 import SideNav from '../sideNav/SideNav'
+import GroupItem from './GroupItem';
 
 class Groups extends Component {
 	constructor() {
 		super();
 
-		this.state = { isActiveNavBar: false }
+		this.state = {
+			isActiveNavBar: false,
+			groups: [
+				{
+					groupName: 'Shoping',
+					totalTasks: 25,
+					groupColor: '#50d2c2'
+				},
+				{
+					groupName: 'Other',
+					totalTasks: 45,
+					groupColor: '#d2a811'
+				},
+				{
+					groupName: 'Other',
+					totalTasks: 45,
+					groupColor: '#2dd200'
+				},
+				{
+					groupName: 'Home',
+					totalTasks: 15,
+					groupColor: '#d21f56'
+				},
+			]
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -41,30 +66,7 @@ class Groups extends Component {
 
 					<div className="groups__categories">
 						<ul>
-							<li className="groups__item">
-								<a href="list.href">
-									<span className="group__name">Shop</span>
-									<span className="group__count">25 items</span>
-								<span className="group__color"> </span>
-								</a>
-							</li>
-
-							<li className="groups__item">
-								<a href="list.href">
-									<span className="group__name">Shop</span>
-									<span className="group__count">25 items</span>
-									<span className="group__color"> </span>
-								</a>
-							</li>
-
-							<li className="groups__item">
-								<a href="list.href">
-									<span className="group__name">Shop</span>
-									<span className="group__count">25 items</span>
-									<span className="group__color"> </span>
-								</a>
-							</li>
-
+							//TODO render GroupItem
 						</ul>
 					</div>
 				</div>

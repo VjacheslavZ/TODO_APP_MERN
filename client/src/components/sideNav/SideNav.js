@@ -4,24 +4,42 @@ import classnames from 'classnames';
 
 import PropTypes from 'prop-types';
 
-const SideNav =({isActiveNavBar}) => {
-	return (
-		<div className={classnames('bg_nav', {'active': isActiveNavBar})}>
-			<div className="sidenav">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="register.html">register</a></li>
-					<li><a href="login.html">login</a></li>
-					<li><a href="create.html">create</a></li>
-					<li><a href="groups.html">groups</a></li>
-					<li><a href="list.html">list</a></li>
-					<li><a href="time_line.html">time line</a></li>
-				</ul>
+class SideNav extends Component {
+	constructor(){
+		super();
+	}
+
+	render(){
+		const isActive = this.props.isActiveNavBar;
+
+		return (
+			<div className={classnames('bg_nav', {'active': isActive})}>
+				<div className="sidenav">
+					<ul>
+						<li>
+							<Link to="/">Home</Link>
+						</li>
+						<li>
+							<Link to="/create">Create</Link>
+						</li>
+						<li>
+							<Link to="/groups">Groups</Link>
+						</li>
+						<li>
+							<Link to="/list">List</Link>
+						</li>
+						<li>
+							<Link to="/time_line">Time line</Link>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</div>
-	)
+		)
+	}
 };
 
-SideNav.propTypes = {};
+SideNav.propTypes = {
+	//TODO
+};
 
 export default SideNav;
