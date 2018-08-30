@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
+
 import PropTypes from 'prop-types';
 
 import SideNav from '../sideNav/SideNav'
@@ -33,7 +35,7 @@ class Groups extends Component {
 					<div className="page__title_small">
 						<div className="nav__block">
 
-							<button className="hamburger hamburger--spin js-hamburger is-active"
+							<button className={classnames('hamburger hamburger--spin js-hamburger ', {'is-active' : this.state.isActiveNavBar})}
 							        type="button"
 							        onClick={() => this.onToggleNavBar()}>
 								<span className="hamburger-box">

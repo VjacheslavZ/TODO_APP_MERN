@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const SideNav =({isActiveNavBar}) => {
 	return (
-		<div className={classnames('bg_nav', {active : isActiveNavBar})}>
+		<div className={classnames('bg_nav', {'active': isActiveNavBar})}>
 			<div className="sidenav">
 				<ul>
 					<li><a href="index.html">Home</a></li>
