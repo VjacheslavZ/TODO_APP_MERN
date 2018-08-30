@@ -9,13 +9,11 @@ class Groups extends Component {
 	constructor() {
 		super();
 
-		this.state = {
-			isActiveNavBar: false
-		}
+		this.state = { isActiveNavBar: false }
 	}
 
 	onToggleNavBar() {
-		const {isActiveNavBar}=  this.state;
+		const { isActiveNavBar }=  this.state;
 
 		this.props.toggleNavBar(isActiveNavBar)
 	}
@@ -29,7 +27,7 @@ class Groups extends Component {
 	render() {
 		return (
 			<Fragment>
-				<SideNav />
+				<SideNav isActiveNavBar={this.state.isActiveNavBar}/>
 
 				<div className="groups">
 					<div className="page__title_small">
@@ -86,7 +84,7 @@ class Groups extends Component {
 Groups.propTypes = {};
 
 const mapStateToProps = (state) => ({
-	navBar: state.navBar
+	navBar: state.navBar,
 });
 
 export default connect(mapStateToProps, {toggleNavBar})(Groups);
