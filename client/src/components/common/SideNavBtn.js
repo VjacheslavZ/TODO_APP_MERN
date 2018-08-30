@@ -36,7 +36,10 @@ class SideNavBtn extends Component {
 	}
 }
 
-SideNavBtn.propTypes = {};
+SideNavBtn.propTypes = {
+	navBar: PropTypes.object.isRequired,
+	toggleNavBar: PropTypes.func.isRequired
+};
 
 const mapStateToProps = (state) => ({
 	navBar: state.navBar,

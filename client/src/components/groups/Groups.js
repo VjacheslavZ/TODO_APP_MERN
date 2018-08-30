@@ -1,13 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
 
 import PropTypes from 'prop-types';
 
 import SideNavBtn from '../common/SideNavBtn';
 import SideNav from '../sideNav/SideNav'
-
-import { toggleNavBar } from '../../actions/sideNavActions';
 
 class Groups extends Component {
 	constructor() {
@@ -37,6 +34,7 @@ class Groups extends Component {
 								<input name="search"/>
 								<i className="fas fa-search active"> </i>
 							</div>
+
 						</div>
 						<h1>My Groups</h1>
 					</div>
@@ -76,7 +74,7 @@ class Groups extends Component {
 }
 
 Groups.propTypes = {
-
+	navBar: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
