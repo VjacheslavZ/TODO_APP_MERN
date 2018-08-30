@@ -4,7 +4,9 @@ import classnames from 'classnames';
 
 import PropTypes from 'prop-types';
 
+import SideNavBtn from '../common/SideNavBtn';
 import SideNav from '../sideNav/SideNav'
+
 import { toggleNavBar } from '../../actions/sideNavActions';
 
 class Groups extends Component {
@@ -14,12 +16,6 @@ class Groups extends Component {
 		this.state = { isActiveNavBar: false }
 	}
 
-	onToggleNavBar() {
-		const { isActiveNavBar }=  this.state;
-
-		this.props.toggleNavBar(isActiveNavBar)
-	}
-	
 	componentWillReceiveProps(nextProps) {
 		this.setState({
 			isActiveNavBar: nextProps.navBar.isActiveNavBar
@@ -35,20 +31,16 @@ class Groups extends Component {
 					<div className="page__title_small">
 						<div className="nav__block">
 
-							<button className={classnames('hamburger hamburger--spin js-hamburger ', {'is-active' : this.state.isActiveNavBar})}
-							        type="button"
-							        onClick={() => this.onToggleNavBar()}>
-								<span className="hamburger-box">
-									<span className="hamburger-inner"> </span>
-								</span>
-							</button>
+							<SideNavBtn />
 
 							<div className="search__block isActive">
-								<input name="search"/><i className="fas fa-search active"></i>
+								<input name="search"/>
+								<i className="fas fa-search active"> </i>
 							</div>
 						</div>
 						<h1>My Groups</h1>
 					</div>
+
 					<div className="groups__categories">
 						<ul>
 							<li className="groups__item">
@@ -83,10 +75,12 @@ class Groups extends Component {
 	}
 }
 
-Groups.propTypes = {};
+Groups.propTypes = {
+
+};
 
 const mapStateToProps = (state) => ({
 	navBar: state.navBar,
 });
 
-export default connect(mapStateToProps, {toggleNavBar})(Groups);
+export default connect(mapStateToProps)(Groups);
