@@ -8,10 +8,44 @@ const Groups = require('../../models/Groups');
 //Load User Model
 const User = require('../../models/User');
 
+//@Route   GET api/groups/
+//@desc    GET group profile
+//@access  Private
+router.get('/', passport.authenticate('jwt', { session: false}), (req, res) => {
+	/*Todo remove hardCoe*/
+	const groups = [
+		{
+			groupName: 'Shoping',
+			totalTasks: 25,
+			groupColor: '#50d2c2'
+		},
+		{
+			groupName: 'Other',
+			totalTasks: 45,
+			groupColor: '#d2a811'
+		},
+		{
+			groupName: 'Other',
+			totalTasks: 45,
+			groupColor: '#2dd200'
+		},
+		{
+			groupName: 'Home',
+			totalTasks: 15,
+			groupColor: '#d21f56'
+		},
+	];
+
+	res.json(groups);
+});
+
+
 //@Route   POST api/groups/group
 //@desc    Add group to profile
 //@access  Private
-router.post('/group', passport.authenticate('jwt', { session: false}), (req, res) => {
+router.post('/', passport.authenticate('jwt', { session: false}), (req, res) => {
+	/*Todo this part*/
+	/*
 	User.findOne({ _id: req.user._id })
 		.then(user => {
 			//Create other groups
@@ -51,7 +85,7 @@ router.post('/group', passport.authenticate('jwt', { session: false}), (req, res
 			// });
 			// newGroup.save().then(group => res.json(group))
 		})
-
+	*/
 });
 
 

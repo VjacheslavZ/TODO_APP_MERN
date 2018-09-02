@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { getGroups } from '../../actions/groupsActions';
 
 import PropTypes from 'prop-types';
 
@@ -13,29 +14,11 @@ class Groups extends Component {
 
 		this.state = {
 			isActiveNavBar: false,
-			groups: [
-				{
-					groupName: 'Shoping',
-					totalTasks: 25,
-					groupColor: '#50d2c2'
-				},
-				{
-					groupName: 'Other',
-					totalTasks: 45,
-					groupColor: '#d2a811'
-				},
-				{
-					groupName: 'Other',
-					totalTasks: 45,
-					groupColor: '#2dd200'
-				},
-				{
-					groupName: 'Home',
-					totalTasks: 15,
-					groupColor: '#d21f56'
-				},
-			]
 		}
+	}
+
+	componentWillMount() {
+		this.props.getGroups();
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -77,10 +60,12 @@ class Groups extends Component {
 
 Groups.propTypes = {
 	navBar: PropTypes.object.isRequired,
+	groups: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = (state) => ({
 	navBar: state.navBar,
+	groups: state.groups.groups
 });
 
-export default connect(mapStateToProps)(Groups);
+export default connect(mapStateToProps, { getGroups })(Groups);
