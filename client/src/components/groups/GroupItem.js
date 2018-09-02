@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-export default (groupData) => (
-	<li className="groups__item">
-		<a href="list.href">
-			<span className="group__name">Shop</span>
-			<span className="group__count">25 items</span>
-			<span className="group__color"> </span>
-		</a>
-	</li>
-);
+class GroupItem  extends Component {
+	render() {
+		const {groupName, totalTasks, groupColor} = this.props.group;
+
+		return (
+			<li className="groups__item">
+				<Link to={groupName}>
+					<span className="group__name">{groupName}</span>
+					<span className="group__count">{totalTasks}</span>
+					<span className="group__color" style={{
+						backgroundColor: groupColor
+					}}> </span>
+				</Link>
+			</li>
+		);
+	}
+}
+
+export default GroupItem;

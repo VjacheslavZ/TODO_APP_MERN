@@ -28,10 +28,15 @@ class Groups extends Component {
 	}
 
 	render() {
+		const groups = (groups) =>
+			groups.map((group, i) =>
+					<GroupItem key={i} group={group}/>
+			)
+		;
+
 		return (
 			<Fragment>
 				<SideNav isActiveNavBar={this.state.isActiveNavBar}/>
-
 				<div className="groups">
 					<div className="page__title_small">
 						<div className="nav__block">
@@ -49,7 +54,9 @@ class Groups extends Component {
 
 					<div className="groups__categories">
 						<ul>
-							//TODO render GroupItem
+							{this.props.groups.length ?
+								groups(this.props.groups) : (<div>No groups</div>)
+							}
 						</ul>
 					</div>
 				</div>
