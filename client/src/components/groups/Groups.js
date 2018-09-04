@@ -30,30 +30,31 @@ class Groups extends Component {
 
 	render() {
 		const groups = this.props.groups;
-		let filterText = this.props.textFilterGroups;
-		
+		const filterText =  this.props.textFilterGroups.toLocaleLowerCase();
+		const filteredItems = [];
+
 		const showGroups = () => {
 			if(filterText.length) {
-				let filteredItems = [];
-
 				groups.map(group => {
-					if(group.groupName === filterText){
-						return filteredItems.push(group)
+					const groupName = group.groupName.toLocaleLowerCase();
+
+					if(groupName.includes(filterText)){
+						filteredItems.push(group)
 					}
 				});
 
 				return(
-					filteredItems.map((group, i) => <GroupItem key={i} group={group}/>)
+					Object.keys(filteredItems).length ?
+						filteredItems.map((group, i) => <GroupItem key={i} group={group}/>)
+						:
+						<div>No matches</div>
 				)
-
 			} else {
 				return(
 					groups.map((group, i) => <GroupItem key={i} group={group}/>)
 				)
 			}
 		};
-
-		let filteredGroups = () => null;
 
 		return (
 			<Fragment>
