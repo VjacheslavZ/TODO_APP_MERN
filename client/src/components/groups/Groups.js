@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import SideNavBtn from '../common/SideNavBtn';
 import SideNav from '../sideNav/SideNav'
 import GroupItem from './GroupItem';
+import SearchBlock from '../common/SearchBlock';
 
 class Groups extends Component {
 	constructor() {
@@ -28,11 +29,31 @@ class Groups extends Component {
 	}
 
 	render() {
-		const groups = (groups) =>
-			groups.map((group, i) =>
-					<GroupItem key={i} group={group}/>
-			)
-		;
+		const groups = this.props.groups;
+		let filterText = this.props.textFilterGroups;
+		
+		const showGroups = () => {
+			if(filterText.length) {
+				let filteredItems = [];
+
+				groups.map(group => {
+					if(group.groupName === filterText){
+						return filteredItems.push(group)
+					}
+				});
+
+				return(
+					filteredItems.map((group, i) => <GroupItem key={i} group={group}/>)
+				)
+
+			} else {
+				return(
+					groups.map((group, i) => <GroupItem key={i} group={group}/>)
+				)
+			}
+		};
+
+		let filteredGroups = () => null;
 
 		return (
 			<Fragment>
@@ -40,14 +61,8 @@ class Groups extends Component {
 				<div className="groups">
 					<div className="page__title_small">
 						<div className="nav__block">
-
 							<SideNavBtn />
-
-							<div className="search__block isActive">
-								<input name="search"/>
-								<i className="fas fa-search active"> </i>
-							</div>
-
+							<SearchBlock />
 						</div>
 						<h1>My Groups</h1>
 					</div>
@@ -55,7 +70,8 @@ class Groups extends Component {
 					<div className="groups__categories">
 						<ul>
 							{this.props.groups.length ?
-								groups(this.props.groups) : (<div>No groups</div>)
+								showGroups(groups) :
+								(<div>No groups</div>)
 							}
 						</ul>
 					</div>
@@ -72,7 +88,8 @@ Groups.propTypes = {
 
 const mapStateToProps = (state) => ({
 	navBar: state.navBar,
-	groups: state.groups.groups
+	groups: state.groups.groups,
+	textFilterGroups: state.groups.textFilterGroups
 });
 
 export default connect(mapStateToProps, { getGroups })(Groups);
