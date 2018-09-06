@@ -17,22 +17,42 @@ router.get('/', passport.authenticate('jwt', { session: false}), (req, res) => {
 		{
 			groupName: 'Shoping',
 			totalTasks: 25,
-			groupColor: '#50d2c2'
+			groupColor: '#50d2c2',
+			tasks: [
+				{
+					taskName: 'Buy phone',
+					isDone: false,
+					taskDescpiption: 'Buy phone in lorem'
+				},
+				{
+					taskName: 'Buy phone',
+					isDone: false,
+					taskDescpiption: 'Buy phone in lorem'
+				},
+			]
 		},
 		{
 			groupName: 'Other',
 			totalTasks: 45,
-			groupColor: '#d2a811'
-		},
-		{
-			groupName: 'Other',
-			totalTasks: 45,
-			groupColor: '#2dd200'
+			groupColor: '#d2a811',
+			tasks: [
+				{
+					taskName: 'Go to cinema',
+					isDone: false,
+					taskDescpiption: 'Watch movie'
+				},
+				{
+					taskName: 'Buy phone',
+					isDone: false,
+					taskDescpiption: 'Buy phone in lorem'
+				},
+			]
 		},
 		{
 			groupName: 'Home',
 			totalTasks: 15,
-			groupColor: '#d21f56'
+			groupColor: '#d21f56',
+			tasks: []
 		},
 	];
 
