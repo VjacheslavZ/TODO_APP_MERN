@@ -26,7 +26,7 @@ class SideNav extends Component {
 							<Link to="/groups">Groups</Link>
 						</li>
 						<li>
-							<Link to="/list">List</Link>
+							<Link to="/list">All tasks</Link>
 						</li>
 						<li>
 							<Link to="/time_line">Time line</Link>

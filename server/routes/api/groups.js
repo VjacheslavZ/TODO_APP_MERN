@@ -16,7 +16,6 @@ router.get('/', passport.authenticate('jwt', { session: false}), (req, res) => {
 	const groups = [
 		{
 			groupName: 'Shoping',
-			totalTasks: 25,
 			groupColor: '#50d2c2',
 			tasks: [
 				{
@@ -33,7 +32,6 @@ router.get('/', passport.authenticate('jwt', { session: false}), (req, res) => {
 		},
 		{
 			groupName: 'Other',
-			totalTasks: 45,
 			groupColor: '#d2a811',
 			tasks: [
 				{
@@ -50,7 +48,6 @@ router.get('/', passport.authenticate('jwt', { session: false}), (req, res) => {
 		},
 		{
 			groupName: 'Home',
-			totalTasks: 15,
 			groupColor: '#d21f56',
 			tasks: []
 		},

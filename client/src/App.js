@@ -16,6 +16,7 @@ import PrivateRoute from './components/common/PrivateRoute'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Groups from './components/groups/Groups'
+import Tasks from './components/tasks/Tasks';
 
 //check token
 if(localStorage.jwtToken) {
@@ -50,7 +51,9 @@ class App extends Component {
                             <Switch>
                                 <PrivateRoute exact path='/groups' component={Groups}/>
                             </Switch>
-
+	                        <Switch>
+		                        <PrivateRoute exact path='/groups/:tasks' component={Tasks}/>
+	                        </Switch>
                         </div>
                     </div>
                 </Router>
