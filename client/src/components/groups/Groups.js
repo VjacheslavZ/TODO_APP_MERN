@@ -33,7 +33,7 @@ class Groups extends Component {
 		const filterText =  this.props.textFilterGroups.toLocaleLowerCase();
 		const filteredItems = [];
 
-		const showGroups = () => {
+		const showFilterResults= () => {
 			if(filterText.length) {
 				groups.map(group => {
 					const groupName = group.groupName.toLocaleLowerCase();
@@ -71,8 +71,7 @@ class Groups extends Component {
 					<div className="groups__categories">
 						<ul>
 							{this.props.groups.length ?
-								showGroups(groups) :
-								(<div>No groups</div>)
+								showFilterResults(groups) : (<div>No groups</div>)
 							}
 						</ul>
 					</div>
