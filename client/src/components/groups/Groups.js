@@ -30,7 +30,7 @@ class Groups extends Component {
 
 	render() {
 		const groups = this.props.groups;
-		const filterText =  this.props.textFilterGroups.toLocaleLowerCase();
+		const filterText =  this.props.textFilter.toLocaleLowerCase();
 		const filteredItems = [];
 
 		const showFilterResults= () => {
@@ -89,7 +89,7 @@ Groups.propTypes = {
 const mapStateToProps = (state) => ({
 	navBar: state.navBar,
 	groups: state.groups.groups,
-	textFilterGroups: state.groups.textFilterGroups
+	textFilter: state.groups.textFilter
 });
 
 export default connect(mapStateToProps, { getGroups })(Groups);

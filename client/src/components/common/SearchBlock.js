@@ -8,7 +8,7 @@ class SearchBlock extends Component {
 	constructor() {
 		super();
 		this.state = {
-			textFilterGroups: ''
+			textFilter: ''
 		};
 
 		this.searchGroupsMatch = this.searchGroupsMatch.bind(this)
@@ -34,7 +34,7 @@ SearchBlock.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-	textFilterGroups: state.textFilterGroups
+	textFilter: state.textFilter
 });
 
 export default connect(mapStateToProps, { filterGroups })(SearchBlock);

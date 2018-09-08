@@ -2,7 +2,7 @@ import { FILTER_GROUPS, GET_GROUPS } from '../actions/types';
 
 const initialState = {
 	groups: [],
-	textFilterGroups: ''
+	textFilter: ''
 };
 
 export default function ( state = initialState, action ) {
@@ -16,7 +16,7 @@ export default function ( state = initialState, action ) {
 		case FILTER_GROUPS:
 			return {
 				...state,
-				textFilterGroups: action.payload
+				textFilter: action.payload
 			};
 		default:
 			return state
