@@ -1,4 +1,4 @@
-import { FILTER_GROUPS, GET_GROUPS } from '../actions/types';
+import { FILTER_GROUPS, GET_GROUPS, GET_GROUP_DATA } from '../actions/types';
 
 const initialState = {
 	groups: [],
@@ -17,6 +17,11 @@ export default function ( state = initialState, action ) {
 			return {
 				...state,
 				textFilter: action.payload
+			};
+		case GET_GROUP_DATA:
+			return {
+				...state,
+				dataGroup: action.payload
 			};
 		default:
 			return state

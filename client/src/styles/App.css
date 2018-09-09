@@ -423,7 +423,7 @@ a:hover .fa-share {
   align-items: center;
   font-size: 23px;
   position: relative; }
-.list__tasks .list__task a:before {
+.list__tasks .list__task.isDone a:before {
   font-family: FontAwesome;
   content: "\f00c";
   position: absolute;

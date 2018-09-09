@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getGroups } from '../../actions/groupsActions';
 
+import { filterGroups } from '../../actions/filterActions';
 import PropTypes from 'prop-types';
 
 import SideNavBtn from '../common/SideNavBtn';
@@ -28,12 +29,16 @@ class Groups extends Component {
 		})
 	}
 
+	componentWillUnmount() {
+		this.props.filterGroups('')
+	}
+
 	render() {
 		const groups = this.props.groups;
 		const filterText =  this.props.textFilter.toLocaleLowerCase();
 		const filteredItems = [];
 
-		const showFilterResults= () => {
+		const showFilterResults = () => {
 			if(filterText.length) {
 				groups.map(group => {
 					const groupName = group.groupName.toLocaleLowerCase();
@@ -92,4 +97,4 @@ const mapStateToProps = (state) => ({
 	textFilter: state.groups.textFilter
 });
 
-export default connect(mapStateToProps, { getGroups })(Groups);
+export default connect(mapStateToProps, { getGroups, filterGroups })(Groups);

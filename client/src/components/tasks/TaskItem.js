@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+import classnames from 'classnames';
 
 class TaskItem extends Component {
 	render() {
+		const {isDone, taskDescpiption, taskName} = this.props.dataTask;
+
 		return (
-			<li className="list__task"><a href="task.html">Todo this task</a></li>
+			<li className={classnames("list__task", {'isDone': isDone})}>
+				<Link to='#'>
+					<span>{taskName}/</span>
+					<span>{taskDescpiption}</span>
+				</Link>
+			</li>
 		);
 	}
 }

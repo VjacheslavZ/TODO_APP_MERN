@@ -23,7 +23,7 @@ class SideNavBtn extends Component {
 
 	handleClick() {
 		if(this.props.onClosePage) {
-			this.props.history.goBack();
+			this.props.history.push('/groups');
 			return
 		}
 
