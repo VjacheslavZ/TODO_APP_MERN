@@ -29,7 +29,7 @@ class Tasks extends Component {
 	render() {
 		const subUrl = this.props.match.params.tasks;
 		const groups = this.props.groups;
-		const dataGroup = find(groups, (group) => { return group.groupName.toLowerCase() === subUrl});
+		const dataGroup = find(groups, group => group.groupName.toLowerCase() === subUrl);
 		const filteredItems = [];
 
 		const filterText =  this.props.textFilter.toLocaleLowerCase();
@@ -38,12 +38,13 @@ class Tasks extends Component {
 			if(filterText.length) {
 				dataGroup.tasks.map(task => {
 					const taksName = task.taskName.toLowerCase();
+
 					if(taksName.includes(filterText)) {
 						filteredItems.push(task)
 					}
 				});
 
-				return(
+				return (
 					Object.keys(filteredItems).length ?
 						filteredItems.map((task, i) => <TaskItem key={i} dataTask={task}/>)
 						:
