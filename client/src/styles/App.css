@@ -409,7 +409,7 @@ a:hover .fa-share {
   border-bottom: 1px solid #f3f3f4; }
 .list__tasks .list__task:hover {
   background-color: #cfcfd7; }
-.list__tasks .list__task a {
+.list__tasks .list__task div {
   padding-left: 50px;
   width: 100%;
   height: 100%;
@@ -423,7 +423,10 @@ a:hover .fa-share {
   align-items: center;
   font-size: 23px;
   position: relative; }
-.list__tasks .list__task.isDone a:before {
+.list__tasks .list__task div:hover {
+  cursor: pointer;
+}
+.list__tasks .list__task.isDone div:before {
   font-family: FontAwesome;
   content: "\f00c";
   position: absolute;

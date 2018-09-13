@@ -11,18 +11,18 @@ class SearchBlock extends Component {
 			textFilter: ''
 		};
 
-		this.searchGroupsMatch = this.searchGroupsMatch.bind(this)
+		this.handleSearchGroup = this.handleSearchGroup.bind(this)
 	}
 
-	searchGroupsMatch(e) {
-		const searchText = e.target.value;
-		this.props.filterGroups(searchText)
+	handleSearchGroup(e) {
+		const { value } = e.target;
+		this.props.filterGroups(value)
 	}
 
 	render() {
 		return (
 			<div className="search__block isActive">
-				<input name="search" onInput={this.searchGroupsMatch}/>
+				<input name="search" onInput={this.handleSearchGroup} placeholder='todo placeHolder'/>
 				<i className="fas fa-search active"> </i>
 			</div>
 		);

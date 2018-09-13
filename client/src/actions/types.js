@@ -9,3 +9,5 @@ export const GET_GROUPS = 'GET_GROUPS';
 export const GET_GROUP_DATA = 'GET_GROUP_DATA';
 
 export const FILTER_GROUPS = 'FILTER_GROUPS';
+
+export const TOGGLE_DONE = 'TOGGLE_DONE';

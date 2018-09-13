@@ -34,8 +34,8 @@ class Groups extends Component {
 	}
 
 	render() {
-		const groups = this.props.groups;
-		const filterText =  this.props.textFilter.toLocaleLowerCase();
+		const {groups, textFilter} = this.props;
+		const filterText =  textFilter.toLocaleLowerCase();
 		const filteredItems = [];
 
 		const showFilterResults = () => {
@@ -44,7 +44,7 @@ class Groups extends Component {
 					const groupName = group.groupName.toLocaleLowerCase();
 
 					if(groupName.includes(filterText)){
-						filteredItems.push(group)
+						return filteredItems.push(group)
 					}
 				});
 
@@ -76,7 +76,7 @@ class Groups extends Component {
 					<div className="groups__categories">
 						<ul>
 							{this.props.groups.length ?
-								showFilterResults(groups) : (<div>No groups</div>)
+								showFilterResults(groups) : <div>No groups</div>
 							}
 						</ul>
 					</div>

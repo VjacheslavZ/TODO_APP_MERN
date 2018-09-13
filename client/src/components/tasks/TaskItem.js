@@ -1,22 +1,32 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { connect } from 'react-redux'
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
-class TaskItem extends Component {
-	render() {
-		const {isDone, taskDescpiption, taskName} = this.props.dataTask;
+import { toggleDone } from '../../actions/taskActions';
 
-		return (
-			<li className={classnames("list__task", {'isDone': isDone})}>
-				<Link to='#'>
-					<span>{taskName}/</span>
-					<span>{taskDescpiption}</span>
-				</Link>
-			</li>
-		);
-	}
-}
+const TaskItem = ({dataTask, toggleDone}) => {
+	const {isDone, taskDescpiption, taskName, id} = dataTask;
 
-TaskItem.propTypes = {};
+	return (
+		<li className={classnames("list__task", {'isDone': isDone})} onClick={() => toggleDone(id)}>
+			<div>
+				<span>{taskName}/</span>
+				<span>{taskDescpiption}</span>
+			</div>
+		</li>
+	);
+};
 
-export default TaskItem;
+TaskItem.propTypes = {
+	toggleDone: PropTypes.func.isRequired,
+	/*data tasj obj*/
+	dataTask: PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		isDone: PropTypes.bool.isRequired,
+		taskName: PropTypes.string.isRequired,
+		taskDescpiption: PropTypes.string,
+	})
+};
+
+export default connect(null, { toggleDone })(TaskItem);

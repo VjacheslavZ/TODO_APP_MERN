@@ -16,14 +16,17 @@ router.get('/', passport.authenticate('jwt', { session: false}), (req, res) => {
 	const groups = [
 		{
 			groupName: 'Shoping',
+			groupId: 'Shoping',
 			groupColor: '#50d2c2',
 			tasks: [
 				{
+					id: 1,
 					taskName: 'Task 1',
 					isDone: false,
 					taskDescpiption: 'text 3'
 				},
 				{
+					id: 2,
 					taskName: 'Task 2',
 					isDone: true,
 					taskDescpiption: 'text 2'
@@ -32,14 +35,17 @@ router.get('/', passport.authenticate('jwt', { session: false}), (req, res) => {
 		},
 		{
 			groupName: 'Other',
+			groupId: 'Other',
 			groupColor: '#d2a811',
 			tasks: [
 				{
+					id: 3,
 					taskName: 'Go to cinema',
 					isDone: true,
 					taskDescpiption: 'Watch movie'
 				},
 				{
+					id: 4,
 					taskName: 'Buy phone',
 					isDone: false,
 					taskDescpiption: 'Buy phone in lorem'
@@ -48,6 +54,7 @@ router.get('/', passport.authenticate('jwt', { session: false}), (req, res) => {
 		},
 		{
 			groupName: 'Home',
+			groupId: 'Home',
 			groupColor: '#d21f56',
 			tasks: []
 		},

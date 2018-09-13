@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { find } from 'lodash';
+import { find, has } from 'lodash';
 import PropTypes from 'prop-types';
 
 import { filterGroups } from '../../actions/filterActions';
@@ -12,9 +12,9 @@ import TaskItem from './TaskItem';
 
 class Tasks extends Component {
 	componentWillMount() {
-		const groups = this.props.groups.length;
-		if(!groups) {
-			this.props.getGroups();
+		const {groups, getGroups} = this.props;
+		if(!groups.length) {
+			getGroups();
 		}
 
 		this.setState({
@@ -28,10 +28,15 @@ class Tasks extends Component {
 
 	render() {
 		const subUrl = this.props.match.params.tasks;
-		const groups = this.props.groups;
-		const dataGroup = find(groups, group => group.groupName.toLowerCase() === subUrl);
-		const filteredItems = [];
+		const { groups } = this.props;
 
+		let dataGroup = {};
+		dataGroup = find(groups, group => group.groupName.toLowerCase() === subUrl);
+
+		let tasks = [];
+		if(has(dataGroup, 'tasks')) tasks = dataGroup.tasks;
+
+		const filteredItems = [];
 		const filterText =  this.props.textFilter.toLocaleLowerCase();
 
 		const showFilterResults = () => {
@@ -39,14 +44,12 @@ class Tasks extends Component {
 				dataGroup.tasks.map(task => {
 					const taksName = task.taskName.toLowerCase();
 
-					if(taksName.includes(filterText)) {
-						filteredItems.push(task)
-					}
+					taksName.includes(filterText) && filteredItems.push(task)
 				});
 
 				return (
-					Object.keys(filteredItems).length ?
-						filteredItems.map((task, i) => <TaskItem key={i} dataTask={task}/>)
+					filteredItems.length ?
+						filteredItems.map(task => <TaskItem key={task.id} dataTask={task}/>)
 						:
 						<div>No matches</div>
 				)
@@ -54,14 +57,12 @@ class Tasks extends Component {
 				let tasks;
 				groups.map(group => {
 					const groupName = group.groupName.toLowerCase();
-
-					if(groupName === subUrl) {
-						tasks = group.tasks
-					}
+					groupName === subUrl ?
+						tasks = group.tasks : null
 				});
 
 				return (
-					tasks.map((task, i) => <TaskItem dataTask={task} key={i}/>)
+					tasks.map(task => <TaskItem dataTask={task} key={task.id}/>)
 				)
 			}
 		};
@@ -74,27 +75,23 @@ class Tasks extends Component {
 						<SideNavBtn isDisabled={true} onClosePage={true}/>
 
 						<div className="nav__control">
-							<span className="list__total">
-								{this.props.dataGroup ? this.props.dataGroup.tasks.length : null}
-							</span>
+							<span className="list__total">{tasks.length}</span>
 
 							<a href="#" style={{display: 'none'}}>
+								{/*TODO in future*/}
 								<i className="fas fa-share"> </i>
 							</a>
 						</div>
 
 						<SearchBlock />
-
 					</div>
 
-					<h1>{dataGroup !== undefined ? dataGroup.groupName : ''}</h1>
+					<h1>{dataGroup && dataGroup.groupName}</h1>
 				</div>
 
 				<div className="list__tasks">
 					<ul>
-						{this.props.groups.length ?
-								showFilterResults(groups) : (<div>No task</div>)
-						}
+						{groups.length && showFilterResults(groups)}
 
 						<button className="list__add" type="submit">
 							<i className="fas fa-plus"> </i>
@@ -110,7 +107,7 @@ Tasks.propTypes = {};
 
 const mapStateToProps = (state)=> ({
 	groups: state.groups.groups,
-	// dataGroup: state.groups.dataGroup,
+	dataGroup: state.groups.dataGroup,
 	textFilter: state.groups.textFilter
 });
 
