@@ -112,5 +112,58 @@ router.post('/', passport.authenticate('jwt', { session: false}), (req, res) => 
 	*/
 });
 
+router.post('/toggleDone', passport.authenticate('jwt', { session: false}), (req, res) => {
+	const {taskId, isDone} = req.body;
+	/*Todo remove hardCoe*/
+	const groups = [
+		{
+			groupName: 'Shoping',
+			groupId: 'Shoping',
+			groupColor: '#50d2c2',
+			tasks: [
+				{
+					id: 1,
+					taskName: 'Task 1',
+					isDone: true,
+					taskDescpiption: 'text 3'
+				},
+				{
+					id: 2,
+					taskName: 'Task 2',
+					isDone: true,
+					taskDescpiption: 'text 2'
+				},
+			]
+		},
+		{
+			groupName: 'Other',
+			groupId: 'Other',
+			groupColor: '#d2a811',
+			tasks: [
+				{
+					id: 3,
+					taskName: 'Go to cinema',
+					isDone: true,
+					taskDescpiption: 'Watch movie'
+				},
+				{
+					id: 4,
+					taskName: 'Buy phone',
+					isDone: false,
+					taskDescpiption: 'Buy phone in lorem'
+				},
+			]
+		},
+		{
+			groupName: 'Home',
+			groupId: 'Home',
+			groupColor: '#d21f56',
+			tasks: []
+		},
+	];
+
+	res.json(groups)
+});
+
 
 module.exports = router;

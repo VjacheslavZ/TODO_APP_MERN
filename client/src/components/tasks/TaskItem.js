@@ -9,7 +9,7 @@ const TaskItem = ({dataTask, toggleDone}) => {
 	const {isDone, taskDescpiption, taskName, id} = dataTask;
 
 	return (
-		<li className={classnames("list__task", {'isDone': isDone})} onClick={() => toggleDone(id)}>
+		<li className={classnames("list__task", {'isDone': isDone})} onClick={() => toggleDone(id, isDone)}>
 			<div>
 				<span>{taskName}/</span>
 				<span>{taskDescpiption}</span>
