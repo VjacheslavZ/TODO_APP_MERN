@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { find, has } from 'lodash';
 import PropTypes from 'prop-types';
 
@@ -9,6 +10,7 @@ import { getGroups } from '../../actions/groupsActions';
 import SideNavBtn from "../common/SideNavBtn";
 import SearchBlock from "../common/SearchBlock";
 import TaskItem from './TaskItem';
+import BtnAdd from '../common/BtnAdd'
 
 class Tasks extends Component {
 	componentWillMount() {
@@ -92,10 +94,10 @@ class Tasks extends Component {
 				<div className="list__tasks">
 					<ul>
 						{groups.length && showFilterResults(groups)}
+						<Link to={`/groups/add_new_task/${subUrl}`}>
+							<BtnAdd/>
+						</Link>
 
-						<button className="list__add" type="submit">
-							<i className="fas fa-plus"> </i>
-						</button>
 					</ul>
 				</div>
 			</div>

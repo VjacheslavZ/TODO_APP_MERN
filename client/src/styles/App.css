@@ -549,3 +549,6 @@ a:hover .fa-share {
 }
 /*# sourceMappingURL=main.css.map */
 
+.create__title {
+  text-transform: capitalize;
+}

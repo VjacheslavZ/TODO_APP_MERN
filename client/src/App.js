@@ -11,12 +11,14 @@ import store from './store'
 import './styles/libs.min.css';
 import './styles/App.css';
 
-import PrivateRoute from './components/common/PrivateRoute'
+import PrivateRoute from './components/common/PrivateRoute';
 
-import Login from './components/auth/Login'
-import Register from './components/auth/Register'
-import Groups from './components/groups/Groups'
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import Groups from './components/groups/Groups';
 import Tasks from './components/tasks/Tasks';
+import AddNewTask from './components/addNewTask/AddNewTask';
+
 
 //check token
 if(localStorage.jwtToken) {
@@ -53,6 +55,9 @@ class App extends Component {
                             </Switch>
 	                        <Switch>
 		                        <PrivateRoute exact path='/groups/:tasks' component={Tasks}/>
+	                        </Switch>
+	                        <Switch>
+		                        <PrivateRoute exact path='/groups/add_new_task/:subGroup' component={AddNewTask}/>
 	                        </Switch>
                         </div>
                     </div>

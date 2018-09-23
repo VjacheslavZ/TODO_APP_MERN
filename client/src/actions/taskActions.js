@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_GROUPS, TOGGLE_DONE } from './types';
+import { GET_GROUPS } from './types';
 
 export const toggleDone = (taskId, isDone) => (dispatch) => {
 	axios.post('/api/groups/toggleDone', {taskId, isDone})
