@@ -13,7 +13,7 @@ const User = require('../../models/User');
 let groups = [
 	{
 		groupName: 'Shoping',
-		groupId: 'Shoping',
+		groupId: 'shoping',
 		groupColor: '#50d2c2',
 		tasks: [
 			{
@@ -32,7 +32,7 @@ let groups = [
 	},
 	{
 		groupName: 'Other',
-		groupId: 'Other',
+		groupId: 'other',
 		groupColor: '#d2a811',
 		tasks: [
 			{
@@ -51,7 +51,7 @@ let groups = [
 	},
 	{
 		groupName: 'Home',
-		groupId: 'Home',
+		groupId: 'home',
 		groupColor: '#d21f56',
 		tasks: []
 	},
@@ -128,5 +128,23 @@ router.post('/toggleDone', passport.authenticate('jwt', { session: false}), (req
 
 	res.json(groups)
 });
+
+//@Route   POST /api/groups/add_new_task
+//@desc    Add new task in category
+//@access  Private
+
+router.post('/add_new_task', passport.authenticate('jwt', { session: false}), (req, res) => {
+	console.log(req.body);
+
+	groups.forEach(group => {
+		if(group.groupId === req.body.groupId) {
+			group.tasks.push(req.body.newTaskData)
+		}
+	});
+
+	res.send(200);
+});
+
+
 
 module.exports = router;

@@ -13,8 +13,8 @@ class AddNewTask extends Component {
 		super();
 
 		this.state = {
-			task_short_desc: '',
-			location: '',
+			taskName: '',
+			taskDescpiption: '',
 			errors: {}
 		};
 
@@ -30,12 +30,16 @@ class AddNewTask extends Component {
 		e.preventDefault();
 		
 		const newTaskData = {
-			task_short_desc: this.state.task_short_desc,
+			id: Date.now(),
+			taskName: this.state.taskName,
 			from: this.state.from,
 			to: this.state.to,
-			location: this.state.location,
+			taskDescpiption: this.state.taskDescpiption,
 		};
-		this.props.addNewTask(newTaskData, this.props.history)
+
+		const groupId =  this.props.match.params.subGroup;
+		const history =  this.props.history;
+		this.props.addNewTask(newTaskData, groupId, history);
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -46,7 +50,6 @@ class AddNewTask extends Component {
 
 	render() {
 		const { errors } = this.state;
-		console.log(errors)
 		const subUrl = this.props.match.params.subGroup;
 
 		return (
@@ -65,9 +68,9 @@ class AddNewTask extends Component {
 								className="create__input"
 								type="text"
 								placeholder="Short description"
-								name="task_short_desc"
+								name="taskName"
 								onChange={this.onChange}
-								error={errors.task_short_desc}
+								error={errors.taskName}
 							/>
 						</div>
 
@@ -99,10 +102,10 @@ class AddNewTask extends Component {
 							<TextFieldCroup
 								className="create__input"
 								type="text"
-								name="location"
-								placeholder='Location'
+								name="taskDescpiption"
+								placeholder='taskDescpiption'
 								onChange={this.onChange}
-								error={errors.location}
+								error={errors.taskDescpiption}
 							/>
 						</div>
 
