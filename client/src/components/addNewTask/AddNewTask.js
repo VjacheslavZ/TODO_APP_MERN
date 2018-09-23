@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SideNavBtn from "../common/SideNavBtn";
+
+import { addNewTask } from "../../actions/addNewTaskAction";
 
 import TextFieldCroup from '../common/TextFieldGroup';
 import BtnAdd from '../common/BtnAdd';
@@ -8,6 +11,12 @@ import BtnAdd from '../common/BtnAdd';
 class AddNewTask extends Component {
 	constructor() {
 		super();
+
+		this.state = {
+			task_short_desc: '',
+			location: '',
+			errors: {}
+		};
 
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
@@ -25,11 +34,19 @@ class AddNewTask extends Component {
 			from: this.state.from,
 			to: this.state.to,
 			location: this.state.location,
+		};
+		this.props.addNewTask(newTaskData, this.props.history)
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if(nextProps.errors) {
+			this.setState({ errors: nextProps.errors })
 		}
-		console.log(newTaskData)
 	}
 
 	render() {
+		const { errors } = this.state;
+		console.log(errors)
 		const subUrl = this.props.match.params.subGroup;
 
 		return (
@@ -49,8 +66,8 @@ class AddNewTask extends Component {
 								type="text"
 								placeholder="Short description"
 								name="task_short_desc"
-								required="required"
 								onChange={this.onChange}
+								error={errors.task_short_desc}
 							/>
 						</div>
 
@@ -62,6 +79,7 @@ class AddNewTask extends Component {
 								name="from"
 								required="required"
 								onChange={this.onChange}
+								error={errors.from}
 							/>
 						</div>
 
@@ -73,6 +91,7 @@ class AddNewTask extends Component {
 								name="to"
 								required="required"
 								onChange={this.onChange}
+								error={errors.to}
 							/>
 						</div>
 
@@ -82,8 +101,8 @@ class AddNewTask extends Component {
 								type="text"
 								name="location"
 								placeholder='Location'
-								required="required"
 								onChange={this.onChange}
+								error={errors.location}
 							/>
 						</div>
 
@@ -97,4 +116,8 @@ class AddNewTask extends Component {
 
 // AddNewTask.js.propTypes = {};
 
-export default AddNewTask;
+const mapStateToProps = (state) => ({
+	errors: state.errors
+});
+
+export default connect(mapStateToProps, {addNewTask})(AddNewTask) ;
