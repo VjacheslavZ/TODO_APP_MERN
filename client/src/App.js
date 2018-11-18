@@ -52,12 +52,8 @@ class App extends Component {
 
                             <Switch>
                                 <PrivateRoute exact path='/groups' component={Groups}/>
-                            </Switch>
-	                        <Switch>
-		                        <PrivateRoute exact path='/groups/:tasks' component={Tasks}/>
-	                        </Switch>
-	                        <Switch>
-		                        <PrivateRoute exact path='/groups/add_new_task/:subGroup' component={AddNewTask}/>
+	                            <PrivateRoute exact path='/groups/:tasks' component={Tasks}/>
+	                            <PrivateRoute exact path='/groups/add_new_task/:subGroup' component={AddNewTask}/>
 	                        </Switch>
                         </div>
                     </div>

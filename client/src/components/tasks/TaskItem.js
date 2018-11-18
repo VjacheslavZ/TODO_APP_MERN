@@ -20,10 +20,10 @@ const TaskItem = ({dataTask, toggleDone}) => {
 
 TaskItem.propTypes = {
 	toggleDone: PropTypes.func.isRequired,
-	/*data tasj obj*/
+	/*data task obj*/
 	dataTask: PropTypes.shape({
 		id: PropTypes.number.isRequired,
-		isDone: PropTypes.bool.isRequired,
+		isDone: PropTypes.bool,
 		taskName: PropTypes.string.isRequired,
 		taskDescpiption: PropTypes.string,
 	})

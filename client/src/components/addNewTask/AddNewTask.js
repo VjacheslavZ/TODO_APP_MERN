@@ -17,28 +17,30 @@ class AddNewTask extends Component {
 			taskDescpiption: '',
 			errors: {}
 		};
+		this.inputsData = {};
 
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 	}
 
 	onChange(e) {
-		this.setState({ [e.target.name]: e.target.value});
+		// this.setState({ [e.target.name]: e.target.value});
+		this.inputsData[e.target.name]= e.target.value;
 	}
 
 	onSubmit(e) {
 		e.preventDefault();
-		
-		const newTaskData = {
+		/*const newTaskData = {
 			id: Date.now(),
 			taskName: this.state.taskName,
 			from: this.state.from,
 			to: this.state.to,
 			taskDescpiption: this.state.taskDescpiption,
-		};
-
+		};*/
+		const newTaskData = this.inputsData;
 		const groupId =  this.props.match.params.subGroup;
 		const history =  this.props.history;
+
 		this.props.addNewTask(newTaskData, groupId, history);
 	}
 
@@ -123,4 +125,4 @@ const mapStateToProps = (state) => ({
 	errors: state.errors
 });
 
-export default connect(mapStateToProps, {addNewTask})(AddNewTask) ;
+export default connect(mapStateToProps, { addNewTask })(AddNewTask) ;
